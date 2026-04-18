@@ -1,0 +1,12 @@
+mundophpbb_gitportfolio_main_controller:
+    path: /gitportfolio
+    defaults:
+        _controller: mundophpbb.gitportfolio.controller.main:handle
+
+mundophpbb_gitportfolio_repository_controller:
+    path: /gitportfolio/repository/{provider}/{identifier}
+    defaults:
+        _controller: mundophpbb.gitportfolio.controller.main:repository
+    requirements:
+        provider: '[A-Za-z0-9_]+'
+        identifier: '[A-Za-z0-9_-]+'

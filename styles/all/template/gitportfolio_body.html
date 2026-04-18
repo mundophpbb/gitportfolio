@@ -1,0 +1,338 @@
+<!-- INCLUDE overall_header.html -->
+<!-- INCLUDECSS @mundophpbb_gitportfolio/gitportfolio.css -->
+
+<div class="githubportfolio-page githubportfolio-page--portal-inspired">
+    <section class="panel githubportfolio-pagehead">
+        <div class="inner">
+            <div class="githubportfolio-pagehead__head forumportal-section-head">
+                <div class="githubportfolio-pagehead__content">
+                    <h2 class="forumportal-section-head__title">{GITPORTFOLIO_PAGE_TITLE}</h2>
+                    <p class="githubportfolio-section-head__sub">{GITPORTFOLIO_PAGE_INTRO}</p>
+                    <div class="githubportfolio-pagehead__meta">
+                        <span class="githubportfolio-pagehead__meta-item">{L_GITPORTFOLIO_ACTIVE_PROVIDERS}: <strong>{GITPORTFOLIO_ACTIVE_PROVIDER_COUNT}</strong></span>
+                        <span class="githubportfolio-pagehead__meta-item">{L_GITPORTFOLIO_LATEST_UPDATE}: <strong>{GITPORTFOLIO_LATEST_UPDATE}</strong></span>
+                        <!-- IF S_GITPORTFOLIO_HAS_ACTIVE_FILTERS -->
+                        <span class="githubportfolio-pagehead__meta-item">{L_GITPORTFOLIO_FILTERS_ACTIVE}: <strong>{GITPORTFOLIO_ACTIVE_FILTERS_COUNT}</strong></span>
+                        <!-- ENDIF -->
+                    </div>
+                </div>
+
+                <div class="githubportfolio-pagehead__aside">
+                    <span class="githubportfolio-profile-pill">Git Portfolio</span>
+                    <div class="githubportfolio-actions githubportfolio-actions--header">
+                        <a class="button button-secondary button-sm" href="#githubportfolio-grid-start">{L_GITPORTFOLIO_EXPLORE_PROJECTS}</a>
+                        <!-- IF S_GITPORTFOLIO_HAS_ACTIVE_FILTERS -->
+                        <a class="button button-secondary button-sm" href="{U_GITPORTFOLIO_PAGE}">{L_GITPORTFOLIO_CLEAR_FILTERS}</a>
+                        <!-- ENDIF -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="githubportfolio-summary">
+                <span class="githubportfolio-summary__item"><strong>{GITPORTFOLIO_TOTAL_STARS}</strong> {L_GITPORTFOLIO_STARS}</span>
+                <span class="githubportfolio-summary__item"><strong>{GITPORTFOLIO_TOTAL_FORKS}</strong> {L_GITPORTFOLIO_FORKS}</span>
+                <span class="githubportfolio-summary__item"><strong>{GITPORTFOLIO_TOTAL_ISSUES}</strong> {L_GITPORTFOLIO_ISSUES}</span>
+                <span class="githubportfolio-summary__item"><strong>{GITPORTFOLIO_REPO_TOTAL}</strong> {L_GITPORTFOLIO_METRIC_PROJECTS}</span>
+                <span class="githubportfolio-summary__item"><strong>{GITPORTFOLIO_FEATURED_TOTAL}</strong> {L_GITPORTFOLIO_METRIC_FEATURED}</span>
+                <span class="githubportfolio-summary__item"><strong>{GITPORTFOLIO_LANGUAGE_TOTAL}</strong> {L_GITPORTFOLIO_METRIC_LANGUAGES}</span>
+                <span class="githubportfolio-summary__item"><strong>{GITPORTFOLIO_FILTERED_COUNT}</strong> {L_GITPORTFOLIO_RESULTS_FOUND}</span>
+                <!-- IF S_GITPORTFOLIO_HAS_TOP_LANGUAGE -->
+                <span class="githubportfolio-summary__item">{L_GITPORTFOLIO_METRIC_MAIN_LANGUAGE}: <strong>{GITPORTFOLIO_TOP_LANGUAGE}</strong></span>
+                <!-- ENDIF -->
+            </div>
+
+            <!-- IF S_GITPORTFOLIO_HAS_LANGUAGE_FILTERS -->
+            <div class="githubportfolio-toolbar">
+                <div class="githubportfolio-toolbar__head">
+                    <span class="githubportfolio-toolbar__label">{L_GITPORTFOLIO_FILTER_BY_LANGUAGE}</span>
+                </div>
+                <div class="githubportfolio-filterbar" id="githubportfolio-language-filter" role="toolbar" aria-label="{L_GITPORTFOLIO_FILTER_BY_LANGUAGE}">
+                    <button type="button" class="githubportfolio-filter-pill is-active" data-filter-language="all">{L_GITPORTFOLIO_FILTER_ALL} <span>{GITPORTFOLIO_REPO_TOTAL}</span></button>
+                    <!-- BEGIN language_filters -->
+                    <button type="button" class="githubportfolio-filter-pill" data-filter-language="{language_filters.KEY}">{language_filters.LABEL} <span>{language_filters.COUNT}</span></button>
+                    <!-- END language_filters -->
+                </div>
+            </div>
+            <!-- ENDIF -->
+        </div>
+    </section>
+
+    <section class="panel githubportfolio-pagepanel githubportfolio-pagepanel--controls">
+        <div class="inner">
+            <div class="forumportal-section-head githubportfolio-section-head githubportfolio-section-head--page">
+                <div>
+                    <h3 class="forumportal-section-head__title">{L_GITPORTFOLIO_APPLY_FILTERS}</h3>
+                    <p class="githubportfolio-section-head__sub">{L_GITPORTFOLIO_PAGE_FILTERS_EXPLAIN}</p>
+                </div>
+                <span class="githubportfolio-count">{GITPORTFOLIO_FILTERED_COUNT}</span>
+            </div>
+
+            <form class="githubportfolio-searchform" method="get" action="{U_GITPORTFOLIO_PAGE}">
+                <div class="githubportfolio-searchform__grid">
+                    <div class="githubportfolio-field">
+                        <label for="gitportfolio_q">{L_GITPORTFOLIO_SEARCH}</label>
+                        <input class="inputbox" type="text" id="gitportfolio_q" name="q" value="{GITPORTFOLIO_SEARCH_QUERY}" placeholder="{L_GITPORTFOLIO_SEARCH_PLACEHOLDER}" />
+                    </div>
+                    <div class="githubportfolio-field">
+                        <label for="gitportfolio_provider">{L_GITPORTFOLIO_PROVIDER}</label>
+                        <select id="gitportfolio_provider" name="provider">
+                            <option value="all"<!-- IF GITPORTFOLIO_SELECTED_PROVIDER eq 'all' --> selected="selected"<!-- ENDIF -->>{L_GITPORTFOLIO_ALL_PROVIDERS}</option>
+                            <!-- BEGIN provider_filter -->
+                            <option value="{provider_filter.NAME}"<!-- IF provider_filter.S_SELECTED --> selected="selected"<!-- ENDIF -->>{provider_filter.LABEL} ({provider_filter.COUNT})</option>
+                            <!-- END provider_filter -->
+                        </select>
+                    </div>
+                    <div class="githubportfolio-field">
+                        <label for="gitportfolio_language">{L_GITPORTFOLIO_LANGUAGE}</label>
+                        <select id="gitportfolio_language" name="language">
+                            <option value="">{L_GITPORTFOLIO_ALL_LANGUAGES}</option>
+                            <!-- BEGIN language_filter -->
+                            <option value="{language_filter.VALUE}"<!-- IF language_filter.S_SELECTED --> selected="selected"<!-- ENDIF -->>{language_filter.LABEL}</option>
+                            <!-- END language_filter -->
+                        </select>
+                    </div>
+                    <div class="githubportfolio-field">
+                        <label for="gitportfolio_sort">{L_GITPORTFOLIO_SORT_BY}</label>
+                        <select id="gitportfolio_sort" name="sort">
+                            <option value="recent"<!-- IF GITPORTFOLIO_SELECTED_SORT eq 'recent' --> selected="selected"<!-- ENDIF -->>{L_GITPORTFOLIO_SORT_RECENT}</option>
+                            <option value="stars"<!-- IF GITPORTFOLIO_SELECTED_SORT eq 'stars' --> selected="selected"<!-- ENDIF -->>{L_GITPORTFOLIO_SORT_STARS}</option>
+                            <option value="name"<!-- IF GITPORTFOLIO_SELECTED_SORT eq 'name' --> selected="selected"<!-- ENDIF -->>{L_GITPORTFOLIO_SORT_NAME}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="githubportfolio-searchform__actions">
+                    <label class="githubportfolio-checkbox"><input type="checkbox" name="featured" value="1"<!-- IF S_GITPORTFOLIO_FEATURED_ONLY --> checked="checked"<!-- ENDIF --> /><span>{L_GITPORTFOLIO_FEATURED_ONLY}</span></label>
+                    <div class="githubportfolio-actions">
+                        <input class="button1" type="submit" value="{L_GITPORTFOLIO_APPLY_FILTERS}" />
+                        <a class="button button-secondary button-sm" href="{U_GITPORTFOLIO_PAGE}">{L_GITPORTFOLIO_CLEAR_FILTERS}</a>
+                    </div>
+                <div class="githubportfolio-actions githubportfolio-actions--header githubportfolio-actions--views">
+                    <a class="button button-secondary button-sm<!-- IF S_GITPORTFOLIO_VIEW_GRID --> is-active<!-- ENDIF -->" href="{U_GITPORTFOLIO_VIEW_GRID}">{L_GITPORTFOLIO_VIEW_GRID}</a>
+                    <a class="button button-secondary button-sm<!-- IF S_GITPORTFOLIO_VIEW_LIST --> is-active<!-- ENDIF -->" href="{U_GITPORTFOLIO_VIEW_LIST}">{L_GITPORTFOLIO_VIEW_LIST}</a>
+                </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- IF S_GITPORTFOLIO_HAS_REPOS -->
+        <div id="githubportfolio-grid-start" class="githubportfolio-anchor"></div>
+
+        <!-- IF S_GITPORTFOLIO_HAS_FEATURED -->
+        <section class="panel githubportfolio-pagepanel githubportfolio-pagepanel--featured" data-filter-panel>
+            <div class="inner">
+                <div class="forumportal-section-head githubportfolio-section-head githubportfolio-section-head--page">
+                    <div>
+                        <h3 class="forumportal-section-head__title">{L_GITPORTFOLIO_FEATURED_SECTION_TITLE}</h3>
+                        <p class="githubportfolio-section-head__sub">{L_GITPORTFOLIO_FEATURED_EXPLAIN}</p>
+                    </div>
+                    <span class="githubportfolio-count">{GITPORTFOLIO_FEATURED_TOTAL}</span>
+                </div>
+
+                <div class="githubportfolio-grid githubportfolio-grid--featured-page githubportfolio-grid--page-portal <!-- IF S_GITPORTFOLIO_VIEW_LIST -->githubportfolio-grid--list<!-- ELSE -->githubportfolio-grid--grid<!-- ENDIF -->" data-filter-grid>
+                    <!-- BEGIN featured_repo -->
+                    <article class="githubportfolio-card githubportfolio-card--featured githubportfolio-card--page-portal githubportfolio-card--lang-{featured_repo.LANGUAGE_CLASS}" data-language="{featured_repo.LANGUAGE_CLASS}">
+                        <div class="githubportfolio-card__top">
+                            <div class="githubportfolio-card__eyebrow">
+                                <div class="githubportfolio-card__badges">
+                                    <!-- IF featured_repo.IS_PINNED --><span class="githubportfolio-badge githubportfolio-badge--accent">{L_GITPORTFOLIO_PINNED}</span><!-- ELSE --><span class="githubportfolio-badge githubportfolio-badge--accent">{L_GITPORTFOLIO_FEATURED_BADGE}</span><!-- ENDIF -->
+                                    <span class="githubportfolio-badge">{featured_repo.PROVIDER_NAME}</span>
+                                    <!-- IF featured_repo.LANGUAGE --><span class="githubportfolio-badge githubportfolio-badge--language githubportfolio-badge--lang-{featured_repo.LANGUAGE_CLASS}">{featured_repo.LANGUAGE}</span><!-- ENDIF -->
+                                </div>
+                            </div>
+
+                            <div class="githubportfolio-card__headline">
+                                <h3 class="githubportfolio-title githubportfolio-title--featured"><a href="{featured_repo.U_DETAIL}">{featured_repo.NAME}</a></h3>
+                            </div>
+
+                            <!-- IF featured_repo.DESCRIPTION -->
+                            <p class="githubportfolio-description githubportfolio-description--featured">{featured_repo.DESCRIPTION}</p>
+                            <!-- ELSE -->
+                            <p class="githubportfolio-description githubportfolio-description--featured githubportfolio-description--placeholder">{L_GITPORTFOLIO_NO_DESCRIPTION}</p>
+                            <!-- ENDIF -->
+                        </div>
+
+                        <div class="githubportfolio-card__footer">
+                            <div class="githubportfolio-stats githubportfolio-stats--portal">
+                                <span class="githubportfolio-stat githubportfolio-stat--stars">★ {featured_repo.STARS}</span>
+                                <span class="githubportfolio-stat"><strong>{L_GITPORTFOLIO_UPDATED}:</strong> {featured_repo.UPDATED_AT}</span>
+                            </div>
+
+                            <div class="githubportfolio-actions">
+                                <a class="button button-secondary button-sm" href="{featured_repo.U_DETAIL}">{L_GITPORTFOLIO_VIEW_DETAILS}</a>
+                                <a class="button button-secondary button-sm" href="{featured_repo.URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_REPOSITORY}</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- END featured_repo -->
+                </div>
+            </div>
+        </section>
+        <!-- ENDIF -->
+
+        <!-- IF S_GITPORTFOLIO_HAS_REGULAR -->
+        <section class="panel githubportfolio-pagepanel githubportfolio-pagepanel--catalog" data-filter-panel>
+            <div class="inner">
+                <div class="forumportal-section-head githubportfolio-section-head githubportfolio-section-head--page">
+                    <div>
+                        <h3 class="forumportal-section-head__title">{L_GITPORTFOLIO_SECTION_ALL_PROJECTS}</h3>
+                        <p class="githubportfolio-section-head__sub">{L_GITPORTFOLIO_CATALOG_EXPLAIN}</p>
+                    </div>
+                    <span class="githubportfolio-count">{GITPORTFOLIO_REGULAR_TOTAL}</span>
+                </div>
+
+                <div class="githubportfolio-grid githubportfolio-grid--portal githubportfolio-grid--page-portal <!-- IF S_GITPORTFOLIO_VIEW_LIST -->githubportfolio-grid--list<!-- ELSE -->githubportfolio-grid--grid<!-- ENDIF -->" data-filter-grid>
+                    <!-- BEGIN repo -->
+                    <article class="githubportfolio-card githubportfolio-card--portal githubportfolio-card--page-portal githubportfolio-card--lang-{repo.LANGUAGE_CLASS}" data-language="{repo.LANGUAGE_CLASS}">
+                        <div class="githubportfolio-card__top">
+                            <div class="githubportfolio-card__eyebrow">
+                                <div class="githubportfolio-card__badges">
+                                    <span class="githubportfolio-badge">{repo.PROVIDER_NAME}</span>
+                                    <!-- IF repo.IS_PINNED --><span class="githubportfolio-badge githubportfolio-badge--accent">{L_GITPORTFOLIO_PINNED}</span><!-- ENDIF -->
+                                    <!-- IF repo.LANGUAGE --><span class="githubportfolio-badge githubportfolio-badge--language githubportfolio-badge--lang-{repo.LANGUAGE_CLASS}">{repo.LANGUAGE}</span><!-- ENDIF -->
+                                    <!-- IF repo.S_HAS_OWNER --><span class="githubportfolio-badge githubportfolio-badge--muted">{repo.OWNER_NAME}</span><!-- ENDIF -->
+                                </div>
+                            </div>
+
+                            <div class="githubportfolio-card__headline">
+                                <h3 class="githubportfolio-title"><a href="{repo.U_DETAIL}">{repo.NAME}</a></h3>
+                            </div>
+
+                            <!-- IF repo.DESCRIPTION -->
+                            <p class="githubportfolio-description githubportfolio-description--portal">{repo.DESCRIPTION}</p>
+                            <!-- ELSE -->
+                            <p class="githubportfolio-description githubportfolio-description--portal githubportfolio-description--placeholder">{L_GITPORTFOLIO_NO_DESCRIPTION}</p>
+                            <!-- ENDIF -->
+                        </div>
+
+                        <div class="githubportfolio-card__footer">
+                            <div class="githubportfolio-stats githubportfolio-stats--portal">
+                                <span class="githubportfolio-stat githubportfolio-stat--stars">★ {repo.STARS}</span>
+                                <span class="githubportfolio-stat"><strong>{L_GITPORTFOLIO_UPDATED}:</strong> {repo.UPDATED_AT}</span>
+                            </div>
+
+                            <div class="githubportfolio-actions">
+                                <a class="button button-secondary button-sm" href="{repo.U_DETAIL}">{L_GITPORTFOLIO_VIEW_DETAILS}</a>
+                                <a class="button button-secondary button-sm" href="{repo.URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_REPOSITORY}</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- END repo -->
+                </div>
+            </div>
+        </section>
+        <!-- ENDIF -->
+
+        <div class="panel bg3 githubportfolio-empty-state githubportfolio-empty-state--filter" id="githubportfolio-filter-empty" hidden>
+            <div class="inner">
+                <h3 class="githubportfolio-empty-state__title">{L_GITPORTFOLIO_FILTER_EMPTY}</h3>
+                <p class="githubportfolio-empty-state__text">{L_GITPORTFOLIO_FILTER_EMPTY_EXPLAIN}</p>
+                <div class="githubportfolio-empty-state__actions">
+                    <button type="button" class="button button-secondary button-sm" id="githubportfolio-filter-reset">{L_GITPORTFOLIO_FILTER_RESET}</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- IF S_GITPORTFOLIO_HAS_PAGINATION -->
+        <section class="panel githubportfolio-pagepanel githubportfolio-pagepanel--pagination">
+            <div class="inner">
+                <div class="githubportfolio-pagination">
+                    <!-- IF S_GITPORTFOLIO_HAS_PREVIOUS_PAGE -->
+                    <a class="button button-secondary button-sm githubportfolio-pagination__nav" href="{U_GITPORTFOLIO_PREVIOUS_PAGE}">&laquo; {L_PREVIOUS}</a>
+                    <!-- ENDIF -->
+                    <!-- BEGIN pagination -->
+                        <!-- IF pagination.S_CURRENT -->
+                        <span class="githubportfolio-pagination__current">{pagination.NUMBER}</span>
+                        <!-- ELSE -->
+                            <!-- IF pagination.S_ELLIPSIS -->
+                            <span class="githubportfolio-pagination__ellipsis">{pagination.NUMBER}</span>
+                            <!-- ELSE -->
+                            <a class="githubportfolio-pagination__page" href="{pagination.U_PAGE}">{pagination.NUMBER}</a>
+                            <!-- ENDIF -->
+                        <!-- ENDIF -->
+                    <!-- END pagination -->
+                    <!-- IF S_GITPORTFOLIO_HAS_NEXT_PAGE -->
+                    <a class="button button-secondary button-sm githubportfolio-pagination__nav" href="{U_GITPORTFOLIO_NEXT_PAGE}">{L_NEXT} &raquo;</a>
+                    <!-- ENDIF -->
+                </div>
+            </div>
+        </section>
+        <!-- ENDIF -->
+    <!-- ELSE -->
+    <div class="panel bg3 githubportfolio-empty-state">
+        <div class="inner">
+            <h3 class="githubportfolio-empty-state__title">{L_GITPORTFOLIO_NO_REPOS_TITLE}</h3>
+            <p class="githubportfolio-empty-state__text">{L_GITPORTFOLIO_NO_REPOS}</p>
+            <p class="githubportfolio-empty-state__text">{L_GITPORTFOLIO_NO_REPOS_EXPLAIN}</p>
+        </div>
+    </div>
+    <!-- ENDIF -->
+</div>
+
+<!-- IF S_GITPORTFOLIO_HAS_REPOS and S_GITPORTFOLIO_HAS_LANGUAGE_FILTERS -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var filterBar = document.getElementById('githubportfolio-language-filter');
+    if (!filterBar) {
+        return;
+    }
+
+    var buttons = Array.prototype.slice.call(filterBar.querySelectorAll('[data-filter-language]'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.githubportfolio-page [data-language]'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.githubportfolio-page [data-filter-panel]'));
+    var emptyState = document.getElementById('githubportfolio-filter-empty');
+    var resetButton = document.getElementById('githubportfolio-filter-reset');
+
+    var applyFilter = function (languageKey) {
+        var visibleCount = 0;
+
+        cards.forEach(function (card) {
+            var matches = languageKey === 'all' || card.getAttribute('data-language') === languageKey;
+            card.hidden = !matches;
+            card.classList.toggle('is-hidden-by-filter', !matches);
+            if (matches) {
+                visibleCount++;
+            }
+        });
+
+        panels.forEach(function (panel) {
+            var hasVisibleCards = !!panel.querySelector('.githubportfolio-card:not([hidden])');
+            panel.hidden = !hasVisibleCards && !panel.classList.contains('githubportfolio-pagepanel--controls') && !panel.classList.contains('githubportfolio-pagepanel--pagination');
+        });
+
+        if (emptyState) {
+            emptyState.hidden = visibleCount > 0;
+        }
+    };
+
+    if (resetButton) {
+        resetButton.addEventListener('click', function () {
+            var allButton = filterBar.querySelector('[data-filter-language="all"]');
+            if (!allButton) {
+                return;
+            }
+
+            buttons.forEach(function (item) {
+                item.classList.remove('is-active');
+            });
+            allButton.classList.add('is-active');
+            applyFilter('all');
+            allButton.focus();
+        });
+    }
+
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            var languageKey = button.getAttribute('data-filter-language') || 'all';
+            buttons.forEach(function (item) {
+                item.classList.remove('is-active');
+            });
+            button.classList.add('is-active');
+            applyFilter(languageKey);
+        });
+    });
+});
+</script>
+<!-- ENDIF -->
+
+<!-- INCLUDE overall_footer.html -->

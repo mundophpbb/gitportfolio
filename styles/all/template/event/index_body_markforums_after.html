@@ -1,0 +1,38 @@
+<!-- IF S_GITPORTFOLIO_HOME_BLOCK -->
+<div class="forumbg githubportfolio-homeblock githubportfolio-homeblock--portal">
+    <div class="inner">
+        <div class="githubportfolio-homeblock__head forumportal-section-head githubportfolio-section-head githubportfolio-section-head--page">
+            <div>
+                <h2 class="forumportal-section-head__title">{L_GITPORTFOLIO_HOME_BLOCK_TITLE}</h2>
+                <p class="githubportfolio-section-head__sub">{L_GITPORTFOLIO_HOME_BLOCK_EXPLAIN}</p>
+            </div>
+            <a class="button button-secondary button-sm" href="{U_GITPORTFOLIO_HOME_ALL}">{L_GITPORTFOLIO_EXPLORE_PROJECTS}</a>
+        </div>
+
+        <div class="githubportfolio-homeblock__grid">
+            <!-- BEGIN gitportfolio_home_repo -->
+            <article class="githubportfolio-homeblock__card">
+                <div class="githubportfolio-homeblock__cardtop">
+                    <div class="githubportfolio-homeblock__badges">
+                        <span class="githubportfolio-badge">{gitportfolio_home_repo.PROVIDER_NAME}</span>
+                        <!-- IF gitportfolio_home_repo.LANGUAGE --><span class="githubportfolio-badge githubportfolio-badge--language">{gitportfolio_home_repo.LANGUAGE}</span><!-- ENDIF -->
+                    </div>
+
+                    <h3 class="githubportfolio-title githubportfolio-homeblock__title"><a href="{gitportfolio_home_repo.URL}" target="_blank" rel="noopener">{gitportfolio_home_repo.NAME}</a></h3>
+
+                    <!-- IF gitportfolio_home_repo.DESCRIPTION -->
+                    <p class="githubportfolio-description githubportfolio-homeblock__description">{gitportfolio_home_repo.DESCRIPTION}</p>
+                    <!-- ELSE -->
+                    <p class="githubportfolio-description githubportfolio-homeblock__description githubportfolio-description--placeholder">{L_GITPORTFOLIO_NO_DESCRIPTION}</p>
+                    <!-- ENDIF -->
+                </div>
+
+                <div class="githubportfolio-homeblock__cardfooter">
+                    <span class="githubportfolio-stat"><strong>{L_GITPORTFOLIO_UPDATED}:</strong> {gitportfolio_home_repo.UPDATED_AT}</span>
+                </div>
+            </article>
+            <!-- END gitportfolio_home_repo -->
+        </div>
+    </div>
+</div>
+<!-- ENDIF -->

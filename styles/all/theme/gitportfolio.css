@@ -1,0 +1,2259 @@
+.githubportfolio-page {
+    margin-top: 12px;
+}
+
+.githubportfolio-page--clean .panel {
+    margin-bottom: 18px;
+}
+
+.githubportfolio-overview .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.githubportfolio-overview__top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 20px;
+    align-items: start;
+}
+
+.githubportfolio-kicker {
+    margin: 0 0 6px;
+    font-size: 0.76em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.72;
+}
+
+.githubportfolio-overview__title {
+    margin: 0;
+    font-size: 1.7em;
+    line-height: 1.2;
+}
+
+.githubportfolio-overview__text {
+    margin: 10px 0 0;
+    max-width: 72ch;
+    line-height: 1.6;
+    opacity: 0.94;
+}
+
+.githubportfolio-overview__aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    min-width: 220px;
+}
+
+.githubportfolio-profile-pill {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid rgba(127, 127, 127, 0.22);
+    background: rgba(127, 127, 127, 0.05);
+    font-size: 0.9em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.githubportfolio-overview__actions,
+.githubportfolio-profile-card__actions,
+.githubportfolio-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.githubportfolio-overview__empty {
+    margin: 0;
+    max-width: 26ch;
+    text-align: right;
+    line-height: 1.5;
+    opacity: 0.84;
+}
+
+.githubportfolio-statbar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.githubportfolio-statbox {
+    border: 1px solid rgba(127, 127, 127, 0.18);
+    background: rgba(127, 127, 127, 0.03);
+    padding: 14px 16px;
+}
+
+.githubportfolio-statbox__value {
+    display: block;
+    font-size: 1.45em;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.githubportfolio-statbox__label {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.72;
+}
+
+.githubportfolio-panel .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.githubportfolio-panel__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.14);
+}
+
+.githubportfolio-section-heading__eyebrow,
+.githubportfolio-subhead__title {
+    margin: 0 0 4px;
+    font-size: 0.76em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.72;
+}
+
+.githubportfolio-panel__title,
+.githubportfolio-section-heading__title {
+    margin: 0;
+    font-size: 1.22em;
+    line-height: 1.25;
+}
+
+.githubportfolio-panel__text,
+.githubportfolio-section-heading__text,
+.githubportfolio-section-head__sub {
+    margin: 0;
+    line-height: 1.58;
+    opacity: 0.9;
+}
+
+.githubportfolio-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    padding: 6px 10px;
+    border: 1px solid rgba(127, 127, 127, 0.18);
+    background: rgba(127, 127, 127, 0.05);
+    font-size: 0.88em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.githubportfolio-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.githubportfolio-grid--page-clean {
+    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+}
+
+.githubportfolio-grid--page,
+.githubportfolio-grid--portal {
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+
+.githubportfolio-grid--featured-page,
+.githubportfolio-grid--featured-portal {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+
+.githubportfolio-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 100%;
+    border: 1px solid rgba(127, 127, 127, 0.16);
+    background: rgba(255, 255, 255, 0.68);
+    padding: 13px;
+}
+
+.githubportfolio-card--featured {
+    background: linear-gradient(180deg, rgba(235, 242, 248, 0.9), rgba(250, 244, 232, 0.82));
+    border-color: rgba(160, 176, 188, 0.34);
+}
+
+.githubportfolio-card--page-clean {
+    justify-content: flex-start;
+}
+
+.githubportfolio-card__top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 auto;
+}
+
+.githubportfolio-card__eyebrow,
+.githubportfolio-card__badges--top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+}
+
+.githubportfolio-card__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.githubportfolio-badge {
+    display: inline-block;
+    padding: 3px 7px;
+    border: 1px solid rgba(127, 127, 127, 0.16);
+    background: rgba(127, 127, 127, 0.04);
+    font-size: 0.74em;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.githubportfolio-badge--accent {
+    background: rgba(222, 233, 241, 0.9);
+    border-color: rgba(160, 176, 188, 0.34);
+}
+
+.githubportfolio-badge--muted {
+    opacity: 0.82;
+}
+
+.githubportfolio-title {
+    margin: 0;
+    font-size: 1.02em;
+    line-height: 1.3;
+    min-height: 2.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.githubportfolio-title--featured {
+    font-size: 1.14em;
+    min-height: 2.45em;
+}
+
+.githubportfolio-title a {
+    text-decoration: none;
+}
+
+.githubportfolio-description {
+    margin: 0;
+    line-height: 1.5;
+    min-height: 5.55em;
+    max-height: 5.55em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    opacity: 0.92;
+    font-size: 0.92em;
+}
+
+.githubportfolio-description--page-clean,
+.githubportfolio-description--portal {
+    min-height: 5.55em;
+    max-height: 5.55em;
+}
+
+.githubportfolio-description--featured,
+.githubportfolio-description--featured-page {
+    min-height: 5.9em;
+    max-height: 5.9em;
+}
+
+.githubportfolio-description--placeholder {
+    font-style: italic;
+    opacity: 0.72;
+}
+
+.githubportfolio-meta-row,
+.githubportfolio-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.githubportfolio-meta-pill,
+.githubportfolio-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 7px;
+    border: 1px solid rgba(127, 127, 127, 0.14);
+    background: rgba(127, 127, 127, 0.03);
+    font-size: 0.78em;
+    line-height: 1.25;
+}
+
+.githubportfolio-meta-pill strong,
+.githubportfolio-stat strong {
+    font-weight: 700;
+}
+
+.githubportfolio-meta-pill--stars,
+.githubportfolio-stat--stars {
+    font-weight: 700;
+}
+
+.githubportfolio-card__footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(127, 127, 127, 0.1);
+}
+
+.githubportfolio-actions--page-clean {
+    margin-top: auto;
+}
+
+.githubportfolio-empty-state {
+    margin-bottom: 18px;
+}
+
+.githubportfolio-empty-state__title {
+    margin-top: 0;
+}
+
+.githubportfolio-subhead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 12px;
+}
+
+.githubportfolio-subhead--portal {
+    margin-top: 4px;
+}
+
+.githubportfolio-section-head {
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.14);
+}
+
+.githubportfolio-section-head__link {
+    align-self: center;
+}
+
+.forumportal-section--githubportfolio {
+    margin-top: 22px;
+}
+
+.forumportal-section--githubportfolio .forumportal-section-head__title {
+    margin: 0;
+}
+
+.githubportfolio-anchor {
+    display: block;
+    position: relative;
+    top: -8px;
+    visibility: hidden;
+}
+
+.githubportfolio-actions .button,
+.githubportfolio-actions--header .button {
+    padding: 3px 9px;
+    min-height: 0;
+    line-height: 1.25;
+    font-size: 0.78em;
+    font-weight: 600;
+    border-color: rgba(127, 127, 127, 0.16);
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: none;
+}
+
+.githubportfolio-actions .button:hover,
+.githubportfolio-actions--header .button:hover {
+    border-color: rgba(127, 127, 127, 0.24);
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.githubportfolio-card--featured .githubportfolio-actions .button {
+    background: rgba(255, 255, 255, 0.48);
+}
+
+.githubportfolio-actions {
+    gap: 6px;
+}
+
+@media (max-width: 1100px) {
+    .githubportfolio-overview__top {
+        grid-template-columns: 1fr;
+    }
+
+    .githubportfolio-overview__aside {
+        align-items: flex-start;
+        min-width: 0;
+    }
+
+    .githubportfolio-overview__empty {
+        text-align: left;
+    }
+}
+
+@media (max-width: 900px) {
+    .githubportfolio-grid--featured-page,
+    .githubportfolio-grid--featured-portal {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .githubportfolio-statbar {
+        grid-template-columns: 1fr;
+    }
+
+    .githubportfolio-panel__head,
+    .githubportfolio-subhead,
+    .githubportfolio-section-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .githubportfolio-title,
+    .githubportfolio-title--featured,
+    .githubportfolio-description,
+    .githubportfolio-description--page-clean,
+    .githubportfolio-description--portal,
+    .githubportfolio-description--featured,
+    .githubportfolio-description--featured-page {
+        min-height: 0;
+        max-height: none;
+        display: block;
+    }
+
+    .githubportfolio-overview__actions,
+    .githubportfolio-profile-card__actions,
+    .githubportfolio-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+
+.githubportfolio-page--portal-inspired .panel {
+    margin-bottom: 16px;
+}
+
+.githubportfolio-pagehead .inner,
+.githubportfolio-pagepanel .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.githubportfolio-page .forumportal-section-head,
+.githubportfolio-pagehead__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.14);
+}
+
+.githubportfolio-pagehead__content .forumportal-section-head__title,
+.githubportfolio-section-head--page .forumportal-section-head__title {
+    margin: 0;
+    font-size: 1.24em;
+    line-height: 1.25;
+}
+
+.githubportfolio-pagehead__aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.githubportfolio-actions--header {
+    justify-content: flex-end;
+}
+
+.githubportfolio-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.githubportfolio-summary__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    border: 1px solid rgba(127, 127, 127, 0.18);
+    background: rgba(127, 127, 127, 0.04);
+    font-size: 0.84em;
+    line-height: 1.35;
+}
+
+.githubportfolio-summary__item strong {
+    font-weight: 700;
+}
+
+.githubportfolio-pagepanel--featured .githubportfolio-card--featured,
+.githubportfolio-pagepanel--catalog .githubportfolio-card--page-portal {
+    background: rgba(127, 127, 127, 0.03);
+}
+
+.githubportfolio-pagepanel--featured .githubportfolio-card--featured {
+    background: linear-gradient(to bottom, rgba(127, 127, 127, 0.08), rgba(127, 127, 127, 0.03));
+}
+
+.githubportfolio-grid--page-portal {
+    gap: 14px;
+}
+
+.githubportfolio-card--page-portal {
+    min-height: 100%;
+}
+
+.githubportfolio-page .githubportfolio-card__footer {
+    margin-top: auto;
+}
+
+.githubportfolio-page .githubportfolio-title {
+    min-height: 2.5em;
+}
+
+.githubportfolio-page .githubportfolio-description--portal,
+.githubportfolio-page .githubportfolio-description--featured {
+    min-height: 4.1em;
+    max-height: 4.1em;
+}
+
+@media (max-width: 900px) {
+    .githubportfolio-page .forumportal-section-head,
+    .githubportfolio-pagehead__head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .githubportfolio-pagehead__aside {
+        align-items: flex-start;
+    }
+
+    .githubportfolio-actions--header {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 700px) {
+    .githubportfolio-summary {
+        flex-direction: column;
+    }
+
+    .githubportfolio-page .githubportfolio-title,
+    .githubportfolio-page .githubportfolio-description--portal,
+    .githubportfolio-page .githubportfolio-description--featured {
+        min-height: 0;
+        max-height: none;
+        display: block;
+    }
+}
+
+
+/* 0.1.11 - cards with more presence, closer to the portal language */
+.githubportfolio-page--portal-inspired .githubportfolio-pagehead {
+    border-top: 3px solid rgba(127, 127, 127, 0.18);
+}
+
+.githubportfolio-pagehead__content .forumportal-section-head__title {
+    font-size: 1.35em;
+}
+
+.githubportfolio-grid--page-portal,
+.githubportfolio-grid--portal,
+.githubportfolio-grid--featured-page,
+.githubportfolio-grid--featured-portal {
+    gap: 16px;
+}
+
+.githubportfolio-card--portal,
+.githubportfolio-card--portal-featured,
+.githubportfolio-card--page-portal {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    background: #fff;
+    border: 1px solid rgba(127, 127, 127, 0.16);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.githubportfolio-card--portal::before,
+.githubportfolio-card--portal-featured::before,
+.githubportfolio-card--page-portal::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: linear-gradient(to right, rgba(127, 127, 127, 0.18), rgba(127, 127, 127, 0.06));
+}
+
+.githubportfolio-card--featured.githubportfolio-card--page-portal::before,
+.githubportfolio-card--featured.githubportfolio-card--portal-featured::before {
+    background: linear-gradient(to right, rgba(127, 127, 127, 0.3), rgba(127, 127, 127, 0.08));
+}
+
+.githubportfolio-card--portal .githubportfolio-card__top,
+.githubportfolio-card--portal-featured .githubportfolio-card__top,
+.githubportfolio-card--page-portal .githubportfolio-card__top {
+    gap: 12px;
+    padding: 16px 16px 0;
+}
+
+.githubportfolio-card__headline {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+}
+
+.githubportfolio-card__mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(127, 127, 127, 0.16);
+    background: rgba(127, 127, 127, 0.05);
+    font-size: 0.88em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.githubportfolio-title,
+.githubportfolio-page .githubportfolio-title {
+    min-height: 0;
+    font-size: 1.12em;
+    line-height: 1.35;
+}
+
+.githubportfolio-title--featured,
+.githubportfolio-page .githubportfolio-title--featured {
+    min-height: 0;
+    font-size: 1.22em;
+}
+
+.githubportfolio-description,
+.githubportfolio-page .githubportfolio-description--portal,
+.githubportfolio-page .githubportfolio-description--featured {
+    min-height: 0;
+    max-height: none;
+    line-height: 1.55;
+    -webkit-line-clamp: 4;
+}
+
+.githubportfolio-description--placeholder {
+    padding: 10px 12px;
+    border-left: 3px solid rgba(127, 127, 127, 0.12);
+    background: rgba(127, 127, 127, 0.03);
+    font-style: normal;
+    opacity: 0.82;
+}
+
+.githubportfolio-card__footer {
+    gap: 10px;
+    padding: 12px 16px 16px;
+    border-top: 1px solid rgba(127, 127, 127, 0.1);
+    background: rgba(127, 127, 127, 0.02);
+}
+
+.githubportfolio-stats--portal {
+    gap: 6px;
+}
+
+.githubportfolio-stat {
+    padding: 5px 8px;
+    background: #fff;
+}
+
+.githubportfolio-actions {
+    gap: 6px;
+}
+
+.githubportfolio-actions .button.button-secondary.button-sm {
+    min-height: 0;
+    padding: 6px 10px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.githubportfolio-pagepanel .githubportfolio-section-head {
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.githubportfolio-summary {
+    gap: 10px;
+}
+
+.githubportfolio-summary__item {
+    padding: 7px 10px;
+    background: #fff;
+}
+
+.githubportfolio-pagepanel--catalog,
+.githubportfolio-pagepanel--featured {
+    border-top: 3px solid rgba(127, 127, 127, 0.16);
+}
+
+.githubportfolio-pagepanel--featured .githubportfolio-card--featured,
+.githubportfolio-pagepanel--catalog .githubportfolio-card--page-portal,
+.githubportfolio-card--portal,
+.githubportfolio-card--portal-featured {
+    background: #fff;
+}
+
+@media (max-width: 700px) {
+    .githubportfolio-card__headline {
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .githubportfolio-card__mark {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8em;
+    }
+
+    .githubportfolio-card__footer,
+    .githubportfolio-card--portal .githubportfolio-card__top,
+    .githubportfolio-card--portal-featured .githubportfolio-card__top,
+    .githubportfolio-card--page-portal .githubportfolio-card__top {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+
+/* 0.1.12 - softer cards, pastel backgrounds, quieter buttons */
+.githubportfolio-card__headline {
+    display: block;
+}
+
+.githubportfolio-card--portal,
+.githubportfolio-card--page-portal {
+    background: linear-gradient(180deg, #f7f9fc 0%, #f3f6fa 100%);
+    border-color: #d9e1e8;
+}
+
+.githubportfolio-card--featured.githubportfolio-card--page-portal,
+.githubportfolio-card--featured.githubportfolio-card--portal-featured,
+.githubportfolio-card--portal-featured {
+    background: linear-gradient(180deg, #fff8ee 0%, #fff4e4 100%);
+    border-color: #ead9bd;
+}
+
+.githubportfolio-card--portal::before,
+.githubportfolio-card--page-portal::before {
+    height: 3px;
+    background: linear-gradient(to right, #dfe7ef, #eef3f8);
+}
+
+.githubportfolio-card--featured.githubportfolio-card--page-portal::before,
+.githubportfolio-card--featured.githubportfolio-card--portal-featured::before,
+.githubportfolio-card--portal-featured::before {
+    height: 3px;
+    background: linear-gradient(to right, #ecd7b3, #f7e9d1);
+}
+
+.githubportfolio-card__headline,
+.githubportfolio-card--portal .githubportfolio-card__top,
+.githubportfolio-card--portal-featured .githubportfolio-card__top,
+.githubportfolio-card--page-portal .githubportfolio-card__top {
+    gap: 10px;
+}
+
+.githubportfolio-title a {
+    color: #0d4f8b;
+}
+
+.githubportfolio-description--placeholder {
+    border-left-color: #d3dde7;
+    background: rgba(255, 255, 255, 0.45);
+    color: #5f6c78;
+}
+
+.githubportfolio-card__footer {
+    background: rgba(255, 255, 255, 0.34);
+    border-top-color: rgba(112, 128, 144, 0.12);
+}
+
+.githubportfolio-stat {
+    background: rgba(255, 255, 255, 0.58);
+    border-color: rgba(130, 148, 165, 0.18);
+}
+
+.githubportfolio-actions .button.button-secondary.button-sm {
+    padding: 5px 10px;
+    border-color: #bcc7d2;
+    background: rgba(255, 255, 255, 0.45);
+    color: #4e5d6c;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+.githubportfolio-actions .button.button-secondary.button-sm:hover,
+.githubportfolio-actions .button.button-secondary.button-sm:focus {
+    border-color: #aab8c5;
+    background: rgba(255, 255, 255, 0.72);
+    color: #2f4357;
+}
+
+.githubportfolio-actions .button + .button {
+    margin-left: 0;
+}
+
+.githubportfolio-page .githubportfolio-actions--header .button.button-secondary.button-sm {
+    background: rgba(255, 255, 255, 0.62);
+}
+
+@media (max-width: 700px) {
+    .githubportfolio-card__headline {
+        display: block;
+    }
+}
+
+/* 0.1.13 - compact cards, pastel only for featured, quieter actions */
+.githubportfolio-grid--page-portal,
+.githubportfolio-grid--portal {
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.githubportfolio-grid--featured-page,
+.githubportfolio-grid--featured-portal {
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.githubportfolio-card--portal,
+.githubportfolio-card--page-portal {
+    background: #ffffff;
+    border-color: #d9e0e6;
+    box-shadow: none;
+}
+
+.githubportfolio-card--featured.githubportfolio-card--page-portal,
+.githubportfolio-card--featured.githubportfolio-card--portal-featured,
+.githubportfolio-card--portal-featured {
+    background: linear-gradient(180deg, #f8f2e8 0%, #f3eee4 100%);
+    border-color: #e2d4bb;
+}
+
+.githubportfolio-card--portal::before,
+.githubportfolio-card--page-portal::before {
+    height: 2px;
+    background: linear-gradient(to right, #dde4eb, #edf1f5);
+}
+
+.githubportfolio-card--featured.githubportfolio-card--page-portal::before,
+.githubportfolio-card--featured.githubportfolio-card--portal-featured::before,
+.githubportfolio-card--portal-featured::before {
+    height: 2px;
+    background: linear-gradient(to right, #dccaa8, #efe2c8);
+}
+
+.githubportfolio-card--portal .githubportfolio-card__top,
+.githubportfolio-card--portal-featured .githubportfolio-card__top,
+.githubportfolio-card--page-portal .githubportfolio-card__top {
+    gap: 8px;
+    padding: 12px 12px 0;
+}
+
+.githubportfolio-card__eyebrow,
+.githubportfolio-card__badges,
+.githubportfolio-stats--portal,
+.githubportfolio-actions {
+    gap: 5px;
+}
+
+.githubportfolio-badge {
+    padding: 2px 6px;
+    font-size: 0.72em;
+}
+
+.githubportfolio-title,
+.githubportfolio-page .githubportfolio-title {
+    min-height: 0;
+    font-size: 1.02em;
+    line-height: 1.28;
+}
+
+.githubportfolio-title--featured,
+.githubportfolio-page .githubportfolio-title--featured {
+    min-height: 0;
+    font-size: 1.12em;
+}
+
+.githubportfolio-description,
+.githubportfolio-page .githubportfolio-description--portal,
+.githubportfolio-page .githubportfolio-description--featured {
+    min-height: 3.9em;
+    max-height: 3.9em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.45;
+    font-size: 1.025em;
+}
+
+.githubportfolio-description--featured,
+.githubportfolio-description--featured-page {
+    min-height: 4.2em;
+    max-height: 4.2em;
+}
+
+.githubportfolio-description--placeholder {
+    padding: 8px 10px;
+}
+
+.githubportfolio-card__footer {
+    gap: 8px;
+    padding: 10px 12px 12px;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.githubportfolio-stat {
+    padding: 3px 6px;
+    font-size: 0.76em;
+}
+
+.githubportfolio-actions .button.button-secondary.button-sm,
+.githubportfolio-page .githubportfolio-actions--header .button.button-secondary.button-sm {
+    min-height: 0;
+    padding: 3px 8px;
+    border-radius: 0;
+    border-color: #c5ced7;
+    background: rgba(255, 255, 255, 0.56);
+    color: #5a6978;
+    font-size: 0.76em;
+    font-weight: 600;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.githubportfolio-actions .button.button-secondary.button-sm:hover,
+.githubportfolio-actions .button.button-secondary.button-sm:focus,
+.githubportfolio-page .githubportfolio-actions--header .button.button-secondary.button-sm:hover,
+.githubportfolio-page .githubportfolio-actions--header .button.button-secondary.button-sm:focus {
+    border-color: #b5c0ca;
+    background: rgba(255, 255, 255, 0.8);
+    color: #3f5163;
+}
+
+@media (max-width: 700px) {
+    .githubportfolio-grid--page-portal,
+    .githubportfolio-grid--portal,
+    .githubportfolio-grid--featured-page,
+    .githubportfolio-grid--featured-portal {
+        grid-template-columns: 1fr;
+    }
+
+    .githubportfolio-description,
+    .githubportfolio-page .githubportfolio-description--portal,
+    .githubportfolio-page .githubportfolio-description--featured {
+        min-height: 0;
+        max-height: none;
+        display: block;
+    }
+}
+
+
+/* 0.1.14 - compact language pastel accents on regular cards */
+.githubportfolio-card--portal,
+.githubportfolio-card--page-portal {
+    --gp-accent: #d7e3ef;
+    --gp-accent-strong: #b6c9db;
+    --gp-card-bg: linear-gradient(180deg, #fbfcfe 0%, #f6f9fc 100%);
+    --gp-footer-bg: rgba(255, 255, 255, 0.34);
+    background: var(--gp-card-bg);
+    border-color: var(--gp-accent-strong);
+}
+
+.githubportfolio-card--portal::before,
+.githubportfolio-card--page-portal::before {
+    background: linear-gradient(to right, var(--gp-accent-strong), var(--gp-accent));
+}
+
+.githubportfolio-card--portal .githubportfolio-card__footer,
+.githubportfolio-card--page-portal .githubportfolio-card__footer {
+    background: var(--gp-footer-bg);
+}
+
+.githubportfolio-card--portal .githubportfolio-title a,
+.githubportfolio-card--page-portal .githubportfolio-title a {
+    color: #184f82;
+}
+
+.githubportfolio-badge--language {
+    border-color: var(--gp-accent-strong);
+    background: rgba(255, 255, 255, 0.6);
+    color: #42586b;
+}
+
+.githubportfolio-card--lang-php {
+    --gp-accent: #ece8f8;
+    --gp-accent-strong: #d4c9ef;
+    --gp-card-bg: linear-gradient(180deg, #fbfaff 0%, #f5f2fb 100%);
+}
+
+.githubportfolio-card--lang-javascript,
+.githubportfolio-card--lang-js {
+    --gp-accent: #f8efc8;
+    --gp-accent-strong: #eadc9e;
+    --gp-card-bg: linear-gradient(180deg, #fffdf6 0%, #fbf7e9 100%);
+}
+
+.githubportfolio-card--lang-typescript,
+.githubportfolio-card--lang-ts {
+    --gp-accent: #dceafb;
+    --gp-accent-strong: #bdd4f0;
+    --gp-card-bg: linear-gradient(180deg, #fbfdff 0%, #f1f7fd 100%);
+}
+
+.githubportfolio-card--lang-css {
+    --gp-accent: #dff1fb;
+    --gp-accent-strong: #bedff0;
+    --gp-card-bg: linear-gradient(180deg, #fbfeff 0%, #f0f8fc 100%);
+}
+
+.githubportfolio-card--lang-html,
+.githubportfolio-card--lang-html5 {
+    --gp-accent: #f9e3d6;
+    --gp-accent-strong: #ebc5ae;
+    --gp-card-bg: linear-gradient(180deg, #fffdfb 0%, #fbf2ec 100%);
+}
+
+.githubportfolio-card--lang-python {
+    --gp-accent: #e2f2dd;
+    --gp-accent-strong: #c6dfbd;
+    --gp-card-bg: linear-gradient(180deg, #fcfffb 0%, #f1f8ee 100%);
+}
+
+.githubportfolio-card--lang-java {
+    --gp-accent: #f2e2dc;
+    --gp-accent-strong: #e0c2b8;
+    --gp-card-bg: linear-gradient(180deg, #fffdfc 0%, #f8efeb 100%);
+}
+
+.githubportfolio-card--lang-c,
+.githubportfolio-card--lang-cpp,
+.githubportfolio-card--lang-c-sharp,
+.githubportfolio-card--lang-c-net,
+.githubportfolio-card--lang-c-1 {
+    --gp-accent: #e6ebf7;
+    --gp-accent-strong: #cad4eb;
+    --gp-card-bg: linear-gradient(180deg, #fcfdff 0%, #f2f5fb 100%);
+}
+
+.githubportfolio-card--lang-vue,
+.githubportfolio-card--lang-shell,
+.githubportfolio-card--lang-bash,
+.githubportfolio-card--lang-go,
+.githubportfolio-card--lang-rust,
+.githubportfolio-card--lang-kotlin,
+.githubportfolio-card--lang-swift,
+.githubportfolio-card--lang-ruby,
+.githubportfolio-card--lang-generic {
+    --gp-accent: #e6edf4;
+    --gp-accent-strong: #ccd7e1;
+    --gp-card-bg: linear-gradient(180deg, #fcfdfe 0%, #f3f6f9 100%);
+}
+
+.githubportfolio-card--featured.githubportfolio-card--page-portal,
+.githubportfolio-card--featured.githubportfolio-card--portal-featured,
+.githubportfolio-card--portal-featured {
+    --gp-accent: #efe2c8;
+    --gp-accent-strong: #dccaa8;
+}
+
+.githubportfolio-card--featured .githubportfolio-badge--language,
+.githubportfolio-card--portal-featured .githubportfolio-badge--language {
+    border-color: rgba(186, 160, 117, 0.34);
+    background: rgba(255, 255, 255, 0.55);
+}
+
+/* 0.1.15 - make language pastels visible without turning the grid into carnival */
+.githubportfolio-card--portal,
+.githubportfolio-card--page-portal {
+    --gp-accent: #d7e3ef;
+    --gp-accent-strong: #b6c9db;
+    --gp-card-bg: linear-gradient(180deg, #f9fbfe 0%, #f1f6fb 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(214, 226, 238, 0.28));
+    --gp-placeholder-bg: rgba(214, 226, 238, 0.26);
+    --gp-placeholder-border: #c3d2e0;
+    --gp-mark-bg: rgba(255, 255, 255, 0.58);
+    --gp-mark-border: rgba(182, 201, 219, 0.78);
+    --gp-language-bg: rgba(255, 255, 255, 0.74);
+    --gp-language-border: rgba(182, 201, 219, 0.88);
+    background: var(--gp-card-bg);
+    border-color: var(--gp-accent-strong);
+}
+
+.githubportfolio-card--portal::before,
+.githubportfolio-card--page-portal::before {
+    height: 5px;
+    background: linear-gradient(to right, var(--gp-accent-strong), rgba(255, 255, 255, 0.24));
+}
+
+.githubportfolio-card--portal .githubportfolio-card__footer,
+.githubportfolio-card--page-portal .githubportfolio-card__footer {
+    background: var(--gp-footer-bg);
+}
+
+.githubportfolio-card--portal .githubportfolio-card__mark,
+.githubportfolio-card--page-portal .githubportfolio-card__mark {
+    background: var(--gp-mark-bg);
+    border-color: var(--gp-mark-border);
+}
+
+.githubportfolio-card--portal .githubportfolio-description--placeholder,
+.githubportfolio-card--page-portal .githubportfolio-description--placeholder {
+    background: var(--gp-placeholder-bg);
+    border-left-color: var(--gp-placeholder-border);
+}
+
+.githubportfolio-card--portal .githubportfolio-badge--language,
+.githubportfolio-card--page-portal .githubportfolio-badge--language {
+    background: var(--gp-language-bg);
+    border-color: var(--gp-language-border);
+}
+
+.githubportfolio-card--lang-php {
+    --gp-accent: #eadff8;
+    --gp-accent-strong: #d7c6f0;
+    --gp-card-bg: linear-gradient(180deg, #faf7ff 0%, #f2ecfb 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(227, 214, 245, 0.30));
+    --gp-placeholder-bg: rgba(227, 214, 245, 0.30);
+    --gp-placeholder-border: #d3c0ee;
+    --gp-mark-border: rgba(215, 198, 240, 0.92);
+    --gp-language-border: rgba(215, 198, 240, 0.96);
+}
+
+.githubportfolio-card--lang-javascript,
+.githubportfolio-card--lang-js {
+    --gp-accent: #f6ebbc;
+    --gp-accent-strong: #ead47f;
+    --gp-card-bg: linear-gradient(180deg, #fffef7 0%, #fbf4df 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(246, 235, 188, 0.34));
+    --gp-placeholder-bg: rgba(246, 235, 188, 0.30);
+    --gp-placeholder-border: #e8d276;
+    --gp-mark-border: rgba(234, 212, 127, 0.92);
+    --gp-language-border: rgba(234, 212, 127, 0.96);
+}
+
+.githubportfolio-card--lang-typescript,
+.githubportfolio-card--lang-ts {
+    --gp-accent: #d5e7fb;
+    --gp-accent-strong: #aecded;
+    --gp-card-bg: linear-gradient(180deg, #fbfdff 0%, #edf5fd 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(213, 231, 251, 0.34));
+    --gp-placeholder-bg: rgba(213, 231, 251, 0.28);
+    --gp-placeholder-border: #adcdee;
+    --gp-mark-border: rgba(174, 205, 237, 0.92);
+    --gp-language-border: rgba(174, 205, 237, 0.96);
+}
+
+.githubportfolio-card--lang-css {
+    --gp-accent: #d8eef8;
+    --gp-accent-strong: #afd6ea;
+    --gp-card-bg: linear-gradient(180deg, #fbfeff 0%, #ecf7fb 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(216, 238, 248, 0.34));
+    --gp-placeholder-bg: rgba(216, 238, 248, 0.28);
+    --gp-placeholder-border: #abd4e8;
+    --gp-mark-border: rgba(175, 214, 234, 0.92);
+    --gp-language-border: rgba(175, 214, 234, 0.96);
+}
+
+.githubportfolio-card--lang-html,
+.githubportfolio-card--lang-html5 {
+    --gp-accent: #f7dfcf;
+    --gp-accent-strong: #e8b89a;
+    --gp-card-bg: linear-gradient(180deg, #fffdfb 0%, #fbefe8 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(247, 223, 207, 0.34));
+    --gp-placeholder-bg: rgba(247, 223, 207, 0.28);
+    --gp-placeholder-border: #e5b28f;
+    --gp-mark-border: rgba(232, 184, 154, 0.92);
+    --gp-language-border: rgba(232, 184, 154, 0.96);
+}
+
+.githubportfolio-card--lang-python {
+    --gp-accent: #deefd7;
+    --gp-accent-strong: #bbd9af;
+    --gp-card-bg: linear-gradient(180deg, #fcfffb 0%, #edf7e9 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(222, 239, 215, 0.34));
+    --gp-placeholder-bg: rgba(222, 239, 215, 0.28);
+    --gp-placeholder-border: #b8d7ab;
+    --gp-mark-border: rgba(187, 217, 175, 0.92);
+    --gp-language-border: rgba(187, 217, 175, 0.96);
+}
+
+.githubportfolio-card--lang-java {
+    --gp-accent: #f0ddd5;
+    --gp-accent-strong: #dbb8a9;
+    --gp-card-bg: linear-gradient(180deg, #fffdfc 0%, #f8ede9 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(240, 221, 213, 0.34));
+    --gp-placeholder-bg: rgba(240, 221, 213, 0.28);
+    --gp-placeholder-border: #d8b19f;
+    --gp-mark-border: rgba(219, 184, 169, 0.92);
+    --gp-language-border: rgba(219, 184, 169, 0.96);
+}
+
+.githubportfolio-card--lang-c,
+.githubportfolio-card--lang-cpp,
+.githubportfolio-card--lang-c-sharp,
+.githubportfolio-card--lang-c-net,
+.githubportfolio-card--lang-c-1 {
+    --gp-accent: #e2e9f6;
+    --gp-accent-strong: #bfcee8;
+    --gp-card-bg: linear-gradient(180deg, #fcfdff 0%, #eff4fb 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(226, 233, 246, 0.34));
+    --gp-placeholder-bg: rgba(226, 233, 246, 0.28);
+    --gp-placeholder-border: #bbcbe6;
+    --gp-mark-border: rgba(191, 206, 232, 0.92);
+    --gp-language-border: rgba(191, 206, 232, 0.96);
+}
+
+.githubportfolio-card--lang-vue,
+.githubportfolio-card--lang-shell,
+.githubportfolio-card--lang-bash,
+.githubportfolio-card--lang-go,
+.githubportfolio-card--lang-rust,
+.githubportfolio-card--lang-kotlin,
+.githubportfolio-card--lang-swift,
+.githubportfolio-card--lang-ruby,
+.githubportfolio-card--lang-generic {
+    --gp-accent: #e4ebf1;
+    --gp-accent-strong: #c7d4df;
+    --gp-card-bg: linear-gradient(180deg, #fcfdfe 0%, #eff3f7 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(228, 235, 241, 0.34));
+    --gp-placeholder-bg: rgba(228, 235, 241, 0.28);
+    --gp-placeholder-border: #c2d0dc;
+    --gp-mark-border: rgba(199, 212, 223, 0.92);
+    --gp-language-border: rgba(199, 212, 223, 0.96);
+}
+
+.githubportfolio-card--featured.githubportfolio-card--page-portal,
+.githubportfolio-card--featured.githubportfolio-card--portal-featured,
+.githubportfolio-card--portal-featured {
+    --gp-accent: #efe2c8;
+    --gp-accent-strong: #dccaa8;
+    --gp-card-bg: linear-gradient(180deg, #fdfaf3 0%, #f7efdf 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(239, 226, 200, 0.34));
+    --gp-placeholder-bg: rgba(239, 226, 200, 0.28);
+    --gp-placeholder-border: #d7c294;
+    --gp-mark-border: rgba(220, 202, 168, 0.94);
+    --gp-language-border: rgba(220, 202, 168, 0.94);
+}
+
+/* 0.1.16 - clearer full-card language pastels, less blocky placeholders, softer borders */
+.githubportfolio-card--portal,
+.githubportfolio-card--page-portal {
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.githubportfolio-card--portal::before,
+.githubportfolio-card--page-portal::before {
+    height: 3px;
+}
+
+.githubportfolio-card--portal .githubportfolio-card__footer,
+.githubportfolio-card--page-portal .githubportfolio-card__footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.githubportfolio-card--portal .githubportfolio-description--placeholder,
+.githubportfolio-card--page-portal .githubportfolio-description--placeholder {
+    padding: 7px 10px;
+    border-left-width: 3px;
+    background: linear-gradient(90deg, var(--gp-placeholder-bg) 0%, rgba(255, 255, 255, 0) 90%);
+    color: #6b7480;
+}
+
+.githubportfolio-card--portal .githubportfolio-badge--language,
+.githubportfolio-card--page-portal .githubportfolio-badge--language {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.58));
+}
+
+.githubportfolio-card--lang-php {
+    --gp-card-bg: linear-gradient(180deg, #f7f2fc 0%, #f1e8fa 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(226, 214, 244, 0.38));
+    --gp-placeholder-bg: rgba(227, 214, 245, 0.38);
+    --gp-mark-bg: rgba(248, 243, 253, 0.92);
+}
+
+.githubportfolio-card--lang-javascript,
+.githubportfolio-card--lang-js {
+    --gp-card-bg: linear-gradient(180deg, #fcf8ea 0%, #f8f0d4 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(246, 235, 188, 0.40));
+    --gp-placeholder-bg: rgba(246, 235, 188, 0.38);
+    --gp-mark-bg: rgba(255, 251, 237, 0.92);
+}
+
+.githubportfolio-card--lang-typescript,
+.githubportfolio-card--lang-ts {
+    --gp-card-bg: linear-gradient(180deg, #f2f8fe 0%, #e6f0fb 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(213, 231, 251, 0.40));
+    --gp-placeholder-bg: rgba(213, 231, 251, 0.34);
+    --gp-mark-bg: rgba(245, 250, 255, 0.92);
+}
+
+.githubportfolio-card--lang-css {
+    --gp-card-bg: linear-gradient(180deg, #f3fbfe 0%, #e7f4fa 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(216, 238, 248, 0.40));
+    --gp-placeholder-bg: rgba(216, 238, 248, 0.34);
+    --gp-mark-bg: rgba(245, 252, 254, 0.92);
+}
+
+.githubportfolio-card--lang-html,
+.githubportfolio-card--lang-html5 {
+    --gp-card-bg: linear-gradient(180deg, #fdf6f2 0%, #f8ece4 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(247, 223, 207, 0.40));
+    --gp-placeholder-bg: rgba(247, 223, 207, 0.34);
+    --gp-mark-bg: rgba(255, 248, 244, 0.92);
+}
+
+.githubportfolio-card--lang-python {
+    --gp-card-bg: linear-gradient(180deg, #f5fbf1 0%, #e9f4e3 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(222, 239, 215, 0.40));
+    --gp-placeholder-bg: rgba(222, 239, 215, 0.34);
+    --gp-mark-bg: rgba(249, 253, 247, 0.92);
+}
+
+.githubportfolio-card--lang-java {
+    --gp-card-bg: linear-gradient(180deg, #fdf7f4 0%, #f5e9e3 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(240, 221, 213, 0.40));
+    --gp-placeholder-bg: rgba(240, 221, 213, 0.34);
+    --gp-mark-bg: rgba(255, 248, 246, 0.92);
+}
+
+.githubportfolio-card--lang-c,
+.githubportfolio-card--lang-cpp,
+.githubportfolio-card--lang-c-sharp,
+.githubportfolio-card--lang-c-net,
+.githubportfolio-card--lang-c-1 {
+    --gp-card-bg: linear-gradient(180deg, #f5f8fc 0%, #e9eef7 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(226, 233, 246, 0.40));
+    --gp-placeholder-bg: rgba(226, 233, 246, 0.34);
+    --gp-mark-bg: rgba(248, 250, 254, 0.92);
+}
+
+.githubportfolio-card--lang-vue,
+.githubportfolio-card--lang-shell,
+.githubportfolio-card--lang-bash,
+.githubportfolio-card--lang-go,
+.githubportfolio-card--lang-rust,
+.githubportfolio-card--lang-kotlin,
+.githubportfolio-card--lang-swift,
+.githubportfolio-card--lang-ruby,
+.githubportfolio-card--lang-generic {
+    --gp-card-bg: linear-gradient(180deg, #f6f9fb 0%, #edf2f6 100%);
+    --gp-footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(222, 230, 236, 0.40));
+    --gp-placeholder-bg: rgba(222, 230, 236, 0.34);
+    --gp-mark-bg: rgba(248, 250, 252, 0.92);
+}
+
+
+/* 0.1.17 - slightly roomier cards and breadcrumb/title icon */
+.githubportfolio-grid--page-portal,
+.githubportfolio-grid--portal {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.githubportfolio-grid--featured-page,
+.githubportfolio-grid--featured-portal {
+    grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
+}
+
+.githubportfolio-card--portal .githubportfolio-card__top,
+.githubportfolio-card--portal-featured .githubportfolio-card__top,
+.githubportfolio-card--page-portal .githubportfolio-card__top {
+    padding: 14px 14px 0;
+}
+
+.githubportfolio-card__footer {
+    padding: 11px 14px 14px;
+}
+
+.githubportfolio-title,
+.githubportfolio-page .githubportfolio-title {
+    font-size: 1.06em;
+    line-height: 1.3;
+}
+
+.githubportfolio-title--featured,
+.githubportfolio-page .githubportfolio-title--featured {
+    font-size: 1.16em;
+}
+
+.githubportfolio-description,
+.githubportfolio-page .githubportfolio-description--portal,
+.githubportfolio-page .githubportfolio-description--featured {
+    min-height: 4.2em;
+    max-height: 4.2em;
+}
+
+.githubportfolio-description--featured,
+.githubportfolio-description--featured-page {
+    min-height: 4.45em;
+    max-height: 4.45em;
+}
+
+.githubportfolio-pagehead__content .forumportal-section-head__title::before {
+    content: '</>';
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 0.78em;
+    font-weight: 700;
+    opacity: 0.7;
+}
+
+@media (max-width: 700px) {
+    .githubportfolio-grid--page-portal,
+    .githubportfolio-grid--portal,
+    .githubportfolio-grid--featured-page,
+    .githubportfolio-grid--featured-portal {
+        grid-template-columns: 1fr;
+    }
+
+    .githubportfolio-card__footer,
+    .githubportfolio-card--portal .githubportfolio-card__top,
+    .githubportfolio-card--portal-featured .githubportfolio-card__top,
+    .githubportfolio-card--page-portal .githubportfolio-card__top {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+.githubportfolio-toolbar {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.githubportfolio-toolbar__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.githubportfolio-toolbar__label {
+    font-size: 0.86em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    opacity: 0.85;
+}
+
+.githubportfolio-filterbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.githubportfolio-filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 11px;
+    border: 1px solid rgba(160, 176, 188, 0.34);
+    background: rgba(255, 255, 255, 0.82);
+    color: inherit;
+    font-size: 0.82em;
+    font-weight: 600;
+    line-height: 1.15;
+    cursor: pointer;
+    transition: background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.githubportfolio-filter-pill span {
+    display: inline-flex;
+    min-width: 1.5em;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 5px;
+    border: 1px solid rgba(160, 176, 188, 0.3);
+    background: rgba(234, 240, 245, 0.85);
+    font-size: 0.92em;
+}
+
+.githubportfolio-filter-pill:hover,
+.githubportfolio-filter-pill:focus-visible {
+    border-color: rgba(138, 157, 173, 0.55);
+    background: rgba(247, 249, 251, 0.96);
+    outline: none;
+}
+
+.githubportfolio-filter-pill.is-active {
+    border-color: rgba(120, 142, 160, 0.65);
+    background: rgba(235, 241, 246, 0.98);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.githubportfolio-empty-state--filter {
+    margin-top: 14px;
+}
+
+.githubportfolio-card.is-hidden-by-filter {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .githubportfolio-toolbar__head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .githubportfolio-filterbar {
+        gap: 6px;
+    }
+}
+
+
+
+.githubportfolio-badge[href] {
+    text-decoration: none;
+}
+
+.githubportfolio-badge[href]:hover,
+.githubportfolio-badge[href]:focus {
+    text-decoration: none;
+}
+
+.githubportfolio-badge--discussion {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border-color: rgba(132, 149, 166, 0.26);
+    background: rgba(236, 241, 245, 0.86);
+    color: inherit;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.githubportfolio-badge--discussion:hover,
+.githubportfolio-badge--discussion:focus {
+    background: rgba(228, 235, 240, 0.96);
+    border-color: rgba(120, 138, 156, 0.34);
+    transform: translateY(-1px);
+}
+
+.githubportfolio-badge__icon {
+    display: inline-block;
+    font-size: 0.95em;
+    line-height: 1;
+}
+
+.githubportfolio-empty-state__text {
+    margin: 6px 0 0;
+    line-height: 1.55;
+    opacity: 0.88;
+}
+
+.githubportfolio-empty-state__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.githubportfolio-empty-state .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+/* 0.1.21 - ACP/live sync polish and quieter summary strip */
+.githubportfolio-summary {
+    align-items: center;
+}
+
+.githubportfolio-summary__item {
+    border-radius: 2px;
+}
+
+.githubportfolio-summary__item--sync {
+    border-style: dashed;
+}
+
+
+/* 0.1.24 - quieter page top and portal footer polish */
+.githubportfolio-pagehead__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.githubportfolio-pagehead__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.githubportfolio-pagehead__meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 0;
+    font-size: 0.82em;
+    line-height: 1.35;
+    color: #66737d;
+}
+
+.githubportfolio-pagehead__meta-item strong {
+    color: #2b3a42;
+    font-weight: 600;
+}
+
+.githubportfolio-pagehead__aside {
+    min-width: 0;
+}
+
+.githubportfolio-summary,
+.githubportfolio-summary.githubportfolio-summary--portal {
+    gap: 6px;
+}
+
+.githubportfolio-summary__item {
+    padding: 5px 9px;
+    font-size: 0.8em;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.githubportfolio-toolbar {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(127, 127, 127, 0.1);
+}
+
+.githubportfolio-toolbar__label {
+    font-size: 0.82em;
+    opacity: 0.78;
+}
+
+.githubportfolio-filterbar {
+    gap: 6px;
+}
+
+.githubportfolio-filter-pill {
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+.githubportfolio-filter-pill span {
+    padding: 1px 4px;
+}
+
+.githubportfolio-portal-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(127, 127, 127, 0.1);
+}
+
+.githubportfolio-portal-foot__link {
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .githubportfolio-portal-foot {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 700px) {
+    .githubportfolio-pagehead__meta {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .githubportfolio-summary,
+    .githubportfolio-summary.githubportfolio-summary--portal {
+        flex-direction: row;
+    }
+
+    .githubportfolio-summary__item {
+        flex: 0 1 auto;
+    }
+}
+
+
+/* 0.1.26 - tighten card structure without shrinking typography or controls */
+.githubportfolio-grid--page-portal,
+.githubportfolio-grid--portal {
+    gap: 14px;
+}
+
+.githubportfolio-card--portal .githubportfolio-card__top,
+.githubportfolio-card--page-portal .githubportfolio-card__top {
+    gap: 10px;
+    padding-top: 15px;
+}
+
+.githubportfolio-card--portal .githubportfolio-card__eyebrow,
+.githubportfolio-card--page-portal .githubportfolio-card__eyebrow {
+    min-height: 0;
+}
+
+.githubportfolio-card--portal .githubportfolio-title,
+.githubportfolio-card--page-portal .githubportfolio-title,
+.githubportfolio-page .githubportfolio-card--page-portal .githubportfolio-title {
+    margin-bottom: 0;
+}
+
+.githubportfolio-card--portal .githubportfolio-description,
+.githubportfolio-card--page-portal .githubportfolio-description,
+.githubportfolio-page .githubportfolio-card--page-portal .githubportfolio-description--portal {
+    min-height: 0;
+    max-height: none;
+}
+
+.githubportfolio-card--portal .githubportfolio-description--placeholder,
+.githubportfolio-card--page-portal .githubportfolio-description--placeholder {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.githubportfolio-card--portal .githubportfolio-card__footer,
+.githubportfolio-card--page-portal .githubportfolio-card__footer {
+    gap: 8px;
+    padding-top: 10px;
+    padding-bottom: 14px;
+}
+
+.githubportfolio-card--portal .githubportfolio-stats--portal,
+.githubportfolio-card--page-portal .githubportfolio-stats--portal {
+    gap: 6px;
+}
+
+.githubportfolio-card--featured.githubportfolio-card--page-portal .githubportfolio-card__top,
+.githubportfolio-card--featured.githubportfolio-card--portal-featured .githubportfolio-card__top,
+.githubportfolio-card--portal-featured .githubportfolio-card__top {
+    gap: 11px;
+}
+
+.githubportfolio-card--featured.githubportfolio-card--page-portal .githubportfolio-card__footer,
+.githubportfolio-card--featured.githubportfolio-card--portal-featured .githubportfolio-card__footer,
+.githubportfolio-card--portal-featured .githubportfolio-card__footer {
+    padding-bottom: 15px;
+}
+
+@media (max-width: 700px) {
+    .githubportfolio-card--portal .githubportfolio-card__top,
+    .githubportfolio-card--page-portal .githubportfolio-card__top,
+    .githubportfolio-card--featured.githubportfolio-card--page-portal .githubportfolio-card__top,
+    .githubportfolio-card--featured.githubportfolio-card--portal-featured .githubportfolio-card__top,
+    .githubportfolio-card--portal-featured .githubportfolio-card__top {
+        gap: 9px;
+    }
+
+    .githubportfolio-card--portal .githubportfolio-description,
+    .githubportfolio-card--page-portal .githubportfolio-description,
+    .githubportfolio-page .githubportfolio-card--page-portal .githubportfolio-description--portal {
+        min-height: 0;
+        max-height: none;
+    }
+}
+
+
+/* Existing Git Portfolio styles */
+.gitportfolio-page { margin-top: 12px; }
+.gitportfolio-page--clean .panel, .gitportfolio-page--portal-inspired .panel { margin-bottom: 18px; }
+.gitportfolio-pagehead .inner, .gitportfolio-panel .inner { display: flex; flex-direction: column; gap: 16px; }
+.gitportfolio-pagehead__head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: start; }
+.gitportfolio-kicker { margin: 0 0 6px; font-size: 0.76em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.72; }
+.gitportfolio-pagehead__title { margin: 0; font-size: 1.7em; line-height: 1.2; }
+.gitportfolio-pagehead__sub { margin: 10px 0 0; max-width: 72ch; line-height: 1.6; opacity: 0.94; }
+.gitportfolio-pagehead__aside { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; min-width: 220px; }
+.gitportfolio-pagehead__meta, .gitportfolio-card__meta { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 10px; }
+.gitportfolio-pagehead__meta-item, .githubportfolio-stat { font-size: .9em; opacity: .88; }
+.gitportfolio-profile-pill { display: inline-block; padding: 6px 10px; border: 1px solid rgba(127,127,127,.22); background: rgba(127,127,127,.05); font-size: .9em; font-weight: 700; line-height: 1.2; }
+.gitportfolio-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.gitportfolio-actions--header { justify-content: flex-end; }
+.gitportfolio-statbar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.gitportfolio-statbox { border: 1px solid rgba(127,127,127,.18); background: rgba(127,127,127,.03); padding: 14px 16px; }
+.gitportfolio-statbox__value { display: block; font-size: 1.45em; font-weight: 700; line-height: 1.1; }
+.gitportfolio-statbox__label { display: block; margin-top: 3px; font-size: .8em; text-transform: uppercase; letter-spacing: .05em; opacity: .72; }
+.gitportfolio-panel__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(127,127,127,.14); }
+.gitportfolio-section-heading__eyebrow { margin: 0 0 4px; font-size: 0.76em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.72; }
+.gitportfolio-panel__title { margin: 0; font-size: 1.22em; line-height: 1.25; }
+.gitportfolio-panel__text { margin: 0; line-height: 1.58; opacity: .9; }
+.gitportfolio-count { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; padding: 6px 10px; border: 1px solid rgba(127,127,127,.18); background: rgba(127,127,127,.05); font-size: .88em; font-weight: 700; line-height: 1; }
+.gitportfolio-filters__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.gitportfolio-field { display: flex; flex-direction: column; gap: 6px; }
+.gitportfolio-field label { font-weight: bold; }
+.gitportfolio-field input, .gitportfolio-field select { width: 100%; box-sizing: border-box; }
+.gitportfolio-filters__actions { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.gitportfolio-checkbox { display: inline-flex; align-items: center; gap: 8px; }
+.gitportfolio-filters__buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+.gitportfolio-grid { display: grid; gap: 14px; }
+.gitportfolio-grid--page-clean { grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); }
+.gitportfolio-grid--featured-page { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+.gitportfolio-card { display: flex; flex-direction: column; gap: 10px; min-height: 100%; border: 1px solid rgba(127,127,127,.16); background: rgba(255,255,255,.68); padding: 13px; }
+.gitportfolio-card--featured { background: linear-gradient(180deg, rgba(235,242,248,.9), rgba(250,244,232,.82)); border-color: rgba(160,176,188,.34); }
+.gitportfolio-card--page-clean { justify-content: flex-start; }
+.gitportfolio-card__top { display: flex; flex-direction: column; gap: 8px; flex: 1 1 auto; }
+.gitportfolio-card__eyebrow, .gitportfolio-card__badges, .gitportfolio-detail__topics, .gitportfolio-pagination { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.gitportfolio-badge, .gitportfolio-topic, .gitportfolio-pagination__current, .gitportfolio-pagination__page { display: inline-block; padding: 3px 7px; border: 1px solid rgba(127,127,127,.16); background: rgba(127,127,127,.04); font-size: .74em; font-weight: 600; line-height: 1.15; text-decoration: none; }
+.gitportfolio-badge--accent { background: rgba(222,233,241,.9); border-color: rgba(160,176,188,.34); }
+.gitportfolio-badge--muted { opacity: .82; }
+.gitportfolio-title { margin: 0; font-size: 1.02em; line-height: 1.3; min-height: 2.5em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.gitportfolio-title--featured { font-size: 1.14em; min-height: 2.45em; }
+.gitportfolio-title a { text-decoration: none; }
+.gitportfolio-description { margin: 0; line-height: 1.5; min-height: 5.55em; }
+.gitportfolio-empty-state .inner { display: flex; flex-direction: column; gap: 8px; }
+.gitportfolio-empty-state__title, .gitportfolio-related__title { margin: 0; }
+.gitportfolio-empty-state__text { margin: 0; line-height: 1.55; }
+.gitportfolio-detail__body--portal { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(260px, .9fr); gap: 16px; align-items: start; }
+.gitportfolio-detail__section { border: 1px solid rgba(127,127,127,.18); background: rgba(127,127,127,.03); padding: 14px 16px; }
+.gitportfolio-detail__section h3 { margin-top: 0; }
+.gitportfolio-card__stats { list-style: none; padding: 0; margin: 0; }
+.gitportfolio-card__stats li { margin: 0 0 6px; }
+.gitportfolio-readme { border: 1px solid rgba(127,127,127,.18); background: rgba(0,0,0,.03); padding: 12px; white-space: pre-wrap; overflow-x: auto; }
+.gitportfolio-detail__image { max-width: 100%; height: auto; display: block; }
+.gitportfolio-pagination { justify-content: center; gap: 8px; }
+@media (max-width: 900px) { .gitportfolio-pagehead__head, .gitportfolio-detail__body--portal { grid-template-columns: 1fr; } .gitportfolio-pagehead__aside { align-items: flex-start; min-width: 0; } .gitportfolio-statbar { grid-template-columns: 1fr; } }
+
+
+/* Public page additions */
+
+.githubportfolio-searchform {
+    margin-top: 16px;
+}
+.githubportfolio-searchform__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+.githubportfolio-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.githubportfolio-field label {
+    font-weight: 700;
+}
+.githubportfolio-field input,
+.githubportfolio-field select {
+    width: 100%;
+    box-sizing: border-box;
+}
+.githubportfolio-searchform__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+.githubportfolio-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.githubportfolio-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+}
+.githubportfolio-pagination__current,
+.githubportfolio-pagination__page,
+.githubportfolio-pagination__ellipsis,
+.githubportfolio-pagination__nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 0 12px;
+    border: 1px solid #c9ced3;
+    background: linear-gradient(180deg, #f8f9fa 0%, #eceff1 100%);
+    color: #4e5a66;
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+}
+.githubportfolio-pagination__page {
+    min-width: 34px;
+    padding: 0 10px;
+}
+.githubportfolio-pagination__current {
+    min-width: 34px;
+    padding: 0 10px;
+    font-weight: 700;
+    border-color: #2f6ea5;
+    background: linear-gradient(180deg, #4f90c9 0%, #2f6ea5 100%);
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+}
+.githubportfolio-pagination__ellipsis {
+    min-width: 34px;
+    padding: 0 8px;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+.githubportfolio-pagination__nav:hover,
+.githubportfolio-pagination__page:hover {
+    border-color: #aeb6bd;
+    background: linear-gradient(180deg, #ffffff 0%, #eef2f4 100%);
+    color: #36414c;
+}
+.githubportfolio-pagepanel--controls .forumportal-section-head {
+    margin-bottom: 12px;
+}
+.githubportfolio-pagepanel--pagination .inner {
+    padding-top: 2px;
+}
+.githubportfolio-pagepanel--pagination {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+.githubportfolio-pagepanel--pagination .inner {
+    padding-bottom: 0;
+}
+
+
+/* Step 14 - repository detail page refresh */
+.githubportfolio-page--detail .githubportfolio-pagehead__aside--detail {
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.githubportfolio-actions--stacked {
+    justify-content: flex-end;
+}
+
+.githubportfolio-detail-hero__title {
+    margin-top: 8px;
+}
+
+.githubportfolio-detail-hero__sub {
+    max-width: 78ch;
+}
+
+.githubportfolio-pagehead__meta--detail {
+    margin-top: 12px;
+}
+
+.githubportfolio-pagepanel--detail-main .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.githubportfolio-detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.95fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.githubportfolio-detail-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.githubportfolio-card--detailpanel {
+    gap: 14px;
+    padding: 16px;
+}
+
+.githubportfolio-card--detailaside {
+    position: sticky;
+    top: 8px;
+}
+
+.githubportfolio-panel__head--plain {
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+.githubportfolio-description--detail {
+    min-height: 0;
+    max-height: none;
+}
+
+.githubportfolio-detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.githubportfolio-detail-readme {
+    margin: 0;
+    border: 1px solid rgba(127, 127, 127, 0.18);
+    background: rgba(0, 0, 0, 0.03);
+    padding: 14px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    line-height: 1.55;
+    max-height: 900px;
+}
+
+.githubportfolio-detail-cover {
+    border: 1px solid rgba(127, 127, 127, 0.16);
+    background: rgba(127, 127, 127, 0.03);
+    padding: 10px;
+}
+
+.githubportfolio-detail-cover__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.githubportfolio-detail-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.githubportfolio-detail-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.12);
+}
+
+.githubportfolio-detail-list li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.githubportfolio-detail-list span {
+    opacity: 0.78;
+}
+
+.githubportfolio-detail-list strong {
+    text-align: right;
+}
+
+.githubportfolio-profile-strip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.githubportfolio-profile-strip__avatar {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 0;
+    border: 1px solid rgba(127, 127, 127, 0.18);
+}
+
+.githubportfolio-profile-strip__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.githubportfolio-profile-strip__content span {
+    opacity: 0.76;
+    font-size: 0.92em;
+}
+
+.githubportfolio-empty-state--embedded {
+    padding: 0;
+}
+
+.githubportfolio-empty-state--embedded .githubportfolio-empty-state__title {
+    font-size: 1em;
+}
+
+@media (max-width: 900px) {
+    .githubportfolio-detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .githubportfolio-card--detailaside {
+        position: static;
+    }
+
+    .githubportfolio-page--detail .githubportfolio-pagehead__aside--detail {
+        align-items: flex-start;
+    }
+
+    .githubportfolio-actions--stacked {
+        justify-content: flex-start;
+    }
+}
+
+.githubportfolio-actions--views .button.is-active {
+    font-weight: 700;
+    border-color: rgba(90, 130, 170, 0.45);
+}
+
+.githubportfolio-grid--list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.githubportfolio-grid--list .githubportfolio-card {
+    width: 100%;
+}
+
+.githubportfolio-homeblock {
+    margin-top: 14px;
+    background: #fff;
+    border: 1px solid #d8e0e7;
+    border-top: 4px solid #3f729b;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.githubportfolio-homeblock .inner {
+    padding: 16px;
+    background: linear-gradient(180deg, #f8fafc 0%, #f2f6fa 100%);
+}
+
+.githubportfolio-homeblock__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(120, 138, 160, 0.16);
+}
+
+.githubportfolio-homeblock__head h2 {
+    margin: 0 0 4px;
+}
+
+.githubportfolio-homeblock__head p {
+    margin: 0;
+}
+
+.githubportfolio-homeblock__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.githubportfolio-homeblock__card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: #fff;
+    border: 1px solid #d9e1e8;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+}
+
+.githubportfolio-homeblock__card::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: linear-gradient(to right, rgba(63, 114, 155, 0.45), rgba(63, 114, 155, 0.12));
+}
+
+.githubportfolio-homeblock__cardtop {
+    padding: 14px 14px 0;
+}
+
+.githubportfolio-homeblock__title {
+    margin: 10px 0 8px;
+    font-size: 1.06em;
+    line-height: 1.35;
+}
+
+.githubportfolio-homeblock__description {
+    margin: 0;
+    line-height: 1.55;
+    min-height: 3.2em;
+    -webkit-line-clamp: 3;
+}
+
+.githubportfolio-homeblock__cardfooter {
+    margin-top: auto;
+    padding: 12px 14px 14px;
+    border-top: 1px solid rgba(120, 138, 160, 0.12);
+    background: rgba(127, 127, 127, 0.02);
+}
+
+.githubportfolio-homeblock__meta {
+    display: inline-block;
+    font-size: .85em;
+    opacity: .72;
+}
+
+.githubportfolio-homeblock__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.githubportfolio-homeblock .button.button-secondary.button-sm {
+    min-height: 0;
+    padding: 7px 12px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+@media (max-width: 700px) {
+    .githubportfolio-homeblock__head {
+        flex-direction: column;
+    }
+
+    .githubportfolio-homeblock__cardtop,
+    .githubportfolio-homeblock__cardfooter,
+    .githubportfolio-homeblock .inner {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+
+.githubportfolio-pagepanel--detail-main .githubportfolio-section-head--page {
+    margin-bottom: 4px;
+}
+.githubportfolio-page--detail .githubportfolio-panel__title {
+    line-height: 1.25;
+}
+.githubportfolio-page--detail .githubportfolio-section-heading__eyebrow {
+    margin-bottom: 4px;
+}

@@ -1,0 +1,210 @@
+<!-- INCLUDE overall_header.html -->
+<!-- INCLUDECSS @mundophpbb_gitportfolio/gitportfolio.css -->
+
+<div class="githubportfolio-page githubportfolio-page--portal-inspired githubportfolio-page--detail">
+    <section class="panel githubportfolio-pagehead githubportfolio-pagehead--detail">
+        <div class="inner">
+            <div class="githubportfolio-pagehead__head forumportal-section-head">
+                <div class="githubportfolio-pagehead__content">
+                    <div class="githubportfolio-card__badges githubportfolio-card__badges--header">
+                        <span class="githubportfolio-badge">{PROVIDER_NAME}</span>
+                        <!-- IF S_HAS_LANGUAGE --><span class="githubportfolio-badge githubportfolio-badge--language githubportfolio-badge--lang-{LANGUAGE_CLASS}">{LANGUAGE}</span><!-- ENDIF -->
+                        <!-- IF IS_PINNED --><span class="githubportfolio-badge githubportfolio-badge--accent">{L_GITPORTFOLIO_PINNED}</span><!-- ELSEIF IS_FEATURED --><span class="githubportfolio-badge githubportfolio-badge--accent">{L_GITPORTFOLIO_FEATURED_BADGE}</span><!-- ENDIF -->
+                        <!-- IF S_HAS_LICENSE --><span class="githubportfolio-badge githubportfolio-badge--muted">{LICENSE_NAME}</span><!-- ENDIF -->
+                    </div>
+
+                    <h2 class="forumportal-section-head__title githubportfolio-detail-hero__title">{NAME}</h2>
+                    <p class="githubportfolio-section-head__sub githubportfolio-detail-hero__sub"><!-- IF S_HAS_DESCRIPTION -->{DESCRIPTION}<!-- ELSE -->{L_GITPORTFOLIO_NO_DESCRIPTION}<!-- ENDIF --></p>
+
+                    <div class="githubportfolio-pagehead__meta githubportfolio-pagehead__meta--detail">
+                        <span class="githubportfolio-pagehead__meta-item">{L_GITPORTFOLIO_FULL_NAME}: <strong>{FULL_NAME}</strong></span>
+                        <!-- IF S_HAS_OWNER --><span class="githubportfolio-pagehead__meta-item">{L_GITPORTFOLIO_OWNER}: <strong>{OWNER_NAME}</strong></span><!-- ENDIF -->
+                        <span class="githubportfolio-pagehead__meta-item">{L_GITPORTFOLIO_UPDATED}: <strong>{UPDATED_AT}</strong></span>
+                    </div>
+                </div>
+
+                <div class="githubportfolio-pagehead__aside githubportfolio-pagehead__aside--detail">
+                    <span class="githubportfolio-profile-pill">{VISIBILITY}</span>
+                    <div class="githubportfolio-actions githubportfolio-actions--header githubportfolio-actions--stacked">
+                        <a class="button button-secondary button-sm" href="{U_GITPORTFOLIO_PAGE}">{L_GITPORTFOLIO_BACK_TO_LIST}</a>
+                        <!-- IF S_GITPORTFOLIO_CAN_REFRESH_REPOSITORY --><a class="button button-secondary button-sm" href="{U_GITPORTFOLIO_REFRESH_REPOSITORY}">{L_GITPORTFOLIO_REFRESH_REPOSITORY}</a><!-- ENDIF -->
+                        <a class="button button-secondary button-sm" href="{U_URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_REPOSITORY}</a>
+                        <!-- IF S_HAS_HOMEPAGE --><a class="button button-secondary button-sm" href="{U_HOMEPAGE}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_PROJECT}</a><!-- ENDIF -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="githubportfolio-summary githubportfolio-summary--portal">
+                <!-- IF S_GITPORTFOLIO_REPOSITORY_REFRESHED --><span class="githubportfolio-summary__item"><strong>{L_GITPORTFOLIO_SYNC_DONE}</strong></span><!-- ENDIF -->
+                <span class="githubportfolio-summary__item"><strong>{STARS}</strong> {L_GITPORTFOLIO_STARS}</span>
+                <span class="githubportfolio-summary__item"><strong>{FORKS}</strong> {L_GITPORTFOLIO_FORKS}</span>
+                <span class="githubportfolio-summary__item"><strong>{OPEN_ISSUES}</strong> {L_GITPORTFOLIO_ISSUES}</span>
+                <span class="githubportfolio-summary__item">{L_GITPORTFOLIO_DEFAULT_BRANCH}: <strong>{DEFAULT_BRANCH}</strong></span>
+                <span class="githubportfolio-summary__item">{L_GITPORTFOLIO_README_LINES}: <strong>{README_LINES}</strong></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel githubportfolio-pagepanel githubportfolio-pagepanel--detail-main">
+        <div class="inner">
+            <div class="forumportal-section-head githubportfolio-section-head githubportfolio-section-head--page">
+                <div>
+                    <h3 class="forumportal-section-head__title">{L_GITPORTFOLIO_REPOSITORY_OVERVIEW}</h3>
+                    <p class="githubportfolio-section-head__sub">{L_GITPORTFOLIO_REPOSITORY_OVERVIEW_EXPLAIN}</p>
+                </div>
+                <span class="githubportfolio-count">{PROVIDER_NAME}</span>
+            </div>
+
+            <div class="githubportfolio-detail-layout">
+                <div class="githubportfolio-detail-column githubportfolio-detail-column--main">
+                    <article class="githubportfolio-card githubportfolio-card--detailpanel">
+                        <div class="githubportfolio-card__top">
+                            <div class="githubportfolio-panel__head githubportfolio-panel__head--plain">
+                                <div>
+                                    <p class="githubportfolio-section-heading__eyebrow">{L_GITPORTFOLIO_OVERVIEW}</p>
+                                    <h3 class="githubportfolio-panel__title">{NAME}</h3>
+                                </div>
+                            </div>
+
+                            <p class="githubportfolio-description githubportfolio-description--detail"><!-- IF S_HAS_DESCRIPTION -->{DESCRIPTION}<!-- ELSE -->{L_GITPORTFOLIO_NO_DESCRIPTION}<!-- ENDIF --></p>
+
+                            <div class="githubportfolio-detail-meta">
+                                <!-- IF S_HAS_LANGUAGE --><span class="githubportfolio-badge githubportfolio-badge--language githubportfolio-badge--lang-{LANGUAGE_CLASS}">{LANGUAGE}</span><!-- ENDIF -->
+                                <!-- IF S_HAS_OWNER --><span class="githubportfolio-badge githubportfolio-badge--muted">{OWNER_NAME}</span><!-- ENDIF -->
+                                <!-- IF S_HAS_LICENSE --><span class="githubportfolio-badge githubportfolio-badge--muted">{LICENSE_NAME}</span><!-- ENDIF -->
+                                <!-- BEGIN repo_topic --><span class="githubportfolio-badge githubportfolio-badge--muted">{repo_topic.TOPIC}</span><!-- END repo_topic -->
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="githubportfolio-card githubportfolio-card--detailpanel">
+                        <div class="githubportfolio-panel__head githubportfolio-panel__head--plain">
+                            <div>
+                                <p class="githubportfolio-section-heading__eyebrow">{L_GITPORTFOLIO_DOCUMENTATION}</p>
+                                <h3 class="githubportfolio-panel__title">{L_GITPORTFOLIO_README}</h3>
+                            </div>
+                        </div>
+
+                        <!-- IF S_HAS_README -->
+                        <pre class="githubportfolio-detail-readme">{README_TEXT}</pre>
+                        <!-- ELSE -->
+                        <div class="githubportfolio-empty-state githubportfolio-empty-state--embedded">
+                            <h4 class="githubportfolio-empty-state__title">{L_GITPORTFOLIO_NO_README}</h4>
+                        </div>
+                        <!-- ENDIF -->
+                    </article>
+
+                    <!-- IF S_HAS_IMAGE -->
+                    <article class="githubportfolio-card githubportfolio-card--detailpanel">
+                        <div class="githubportfolio-panel__head githubportfolio-panel__head--plain">
+                            <div>
+                                <p class="githubportfolio-section-heading__eyebrow">{L_GITPORTFOLIO_IMAGE}</p>
+                                <h3 class="githubportfolio-panel__title">{L_GITPORTFOLIO_IMAGE}</h3>
+                            </div>
+                        </div>
+                        <div class="githubportfolio-detail-cover">
+                            <img class="githubportfolio-detail-cover__image" src="{IMAGE}" alt="{NAME}" />
+                        </div>
+                    </article>
+                    <!-- ENDIF -->
+                </div>
+
+                <aside class="githubportfolio-detail-column githubportfolio-detail-column--aside">
+                    <article class="githubportfolio-card githubportfolio-card--detailpanel githubportfolio-card--detailaside">
+                        <div class="githubportfolio-panel__head githubportfolio-panel__head--plain">
+                            <div>
+                                <p class="githubportfolio-section-heading__eyebrow">{L_GITPORTFOLIO_REPOSITORY_STATS}</p>
+                                <h3 class="githubportfolio-panel__title">{L_GITPORTFOLIO_REPOSITORY_STATS}</h3>
+                            </div>
+                        </div>
+
+                        <ul class="githubportfolio-detail-list">
+                            <li><span>{L_GITPORTFOLIO_PROVIDER}</span><strong>{PROVIDER_NAME}</strong></li>
+                            <li><span>{L_GITPORTFOLIO_VISIBILITY}</span><strong>{VISIBILITY}</strong></li>
+                            <li><span>{L_GITPORTFOLIO_DEFAULT_BRANCH}</span><strong>{DEFAULT_BRANCH}</strong></li>
+                            <li><span>{L_GITPORTFOLIO_STARS}</span><strong>{STARS}</strong></li>
+                            <li><span>{L_GITPORTFOLIO_FORKS}</span><strong>{FORKS}</strong></li>
+                            <li><span>{L_GITPORTFOLIO_ISSUES}</span><strong>{OPEN_ISSUES}</strong></li>
+                            <li><span>{L_GITPORTFOLIO_UPDATED}</span><strong>{UPDATED_AT}</strong></li>
+                            <li><span>{L_GITPORTFOLIO_README_LINES}</span><strong>{README_LINES}</strong></li>
+                        </ul>
+                    </article>
+
+                    <!-- IF S_HAS_OWNER -->
+                    <article class="githubportfolio-card githubportfolio-card--detailpanel githubportfolio-card--detailaside">
+                        <div class="githubportfolio-panel__head githubportfolio-panel__head--plain">
+                            <div>
+                                <p class="githubportfolio-section-heading__eyebrow">{L_GITPORTFOLIO_OWNER}</p>
+                                <h3 class="githubportfolio-panel__title">{L_GITPORTFOLIO_OWNER}</h3>
+                            </div>
+                        </div>
+
+                        <div class="githubportfolio-profile-strip">
+                            <!-- IF S_HAS_OWNER_AVATAR -->
+                            <img class="githubportfolio-profile-strip__avatar" src="{OWNER_AVATAR}" alt="{OWNER_NAME}" />
+                            <!-- ENDIF -->
+                            <div class="githubportfolio-profile-strip__content">
+                                <strong>{OWNER_NAME}</strong>
+                                <span>{PROVIDER_NAME}</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- ENDIF -->
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- IF S_GITPORTFOLIO_HAS_RELATED -->
+    <section class="panel githubportfolio-pagepanel githubportfolio-pagepanel--catalog">
+        <div class="inner">
+            <div class="forumportal-section-head githubportfolio-section-head githubportfolio-section-head--page">
+                <div>
+                    <h3 class="forumportal-section-head__title">{L_GITPORTFOLIO_RELATED_REPOSITORIES}</h3>
+                    <p class="githubportfolio-section-head__sub">{L_GITPORTFOLIO_FEATURED_EXPLAIN}</p>
+                </div>
+            </div>
+
+            <div class="githubportfolio-grid githubportfolio-grid--portal githubportfolio-grid--page-portal">
+                <!-- BEGIN related_repo -->
+                <article class="githubportfolio-card githubportfolio-card--portal githubportfolio-card--page-portal githubportfolio-card--lang-{related_repo.LANGUAGE_CLASS}" data-language="{related_repo.LANGUAGE_CLASS}">
+                    <div class="githubportfolio-card__top">
+                        <div class="githubportfolio-card__eyebrow">
+                            <div class="githubportfolio-card__badges">
+                                <span class="githubportfolio-badge">{related_repo.PROVIDER_NAME}</span>
+                                <!-- IF related_repo.LANGUAGE --><span class="githubportfolio-badge githubportfolio-badge--language githubportfolio-badge--lang-{related_repo.LANGUAGE_CLASS}">{related_repo.LANGUAGE}</span><!-- ENDIF -->
+                                <!-- IF related_repo.S_HAS_OWNER --><span class="githubportfolio-badge githubportfolio-badge--muted">{related_repo.OWNER_NAME}</span><!-- ENDIF -->
+                            </div>
+                        </div>
+
+                        <div class="githubportfolio-card__headline">
+                            <h3 class="githubportfolio-title"><a href="{related_repo.U_DETAIL}">{related_repo.NAME}</a></h3>
+                        </div>
+
+                        <!-- IF related_repo.DESCRIPTION -->
+                        <p class="githubportfolio-description githubportfolio-description--portal">{related_repo.DESCRIPTION}</p>
+                        <!-- ELSE -->
+                        <p class="githubportfolio-description githubportfolio-description--portal githubportfolio-description--placeholder">{L_GITPORTFOLIO_NO_DESCRIPTION}</p>
+                        <!-- ENDIF -->
+                    </div>
+
+                    <div class="githubportfolio-card__footer">
+                        <div class="githubportfolio-stats githubportfolio-stats--portal">
+                            <span class="githubportfolio-stat githubportfolio-stat--stars">★ {related_repo.STARS}</span>
+                            <span class="githubportfolio-stat"><strong>{L_GITPORTFOLIO_UPDATED}:</strong> {related_repo.UPDATED_AT}</span>
+                        </div>
+
+                        <div class="githubportfolio-actions">
+                            <a class="button button-secondary button-sm" href="{related_repo.U_DETAIL}">{L_GITPORTFOLIO_VIEW_DETAILS}</a>
+                            <a class="button button-secondary button-sm" href="{related_repo.URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_REPOSITORY}</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- END related_repo -->
+            </div>
+        </div>
+    </section>
+    <!-- ENDIF -->
+</div>
+
+<!-- INCLUDE overall_footer.html -->

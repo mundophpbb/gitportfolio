@@ -1,0 +1,65 @@
+services:
+
+    mundophpbb.gitportfolio.activity_logger:
+        class: mundophpbb\gitportfolio\core\service\activity_logger
+        arguments:
+            - '@dbal.conn'
+            - '%core.table_prefix%gitportfolio_log'
+    mundophpbb.gitportfolio.custom_repository_manager:
+        class: mundophpbb\gitportfolio\core\service\custom_repository_manager
+        arguments:
+            - '@dbal.conn'
+            - '%core.table_prefix%gitportfolio_custom'
+
+    mundophpbb.gitportfolio.provider.github:
+        class: mundophpbb\gitportfolio\core\provider\github_provider
+        arguments:
+            - '@config'
+            - '@cache.driver'
+            - '@user'
+
+    mundophpbb.gitportfolio.provider.gitlab:
+        class: mundophpbb\gitportfolio\core\provider\gitlab_provider
+        arguments:
+            - '@config'
+            - '@cache.driver'
+            - '@user'
+
+    mundophpbb.gitportfolio.provider.custom:
+        class: mundophpbb\gitportfolio\core\provider\custom_provider
+        arguments:
+            - '@config'
+            - '@user'
+            - '@mundophpbb.gitportfolio.custom_repository_manager'
+
+    mundophpbb.gitportfolio.provider_manager:
+        class: mundophpbb\gitportfolio\core\service\provider_manager
+        calls:
+            - [add_provider, ['@mundophpbb.gitportfolio.provider.github']]
+            - [add_provider, ['@mundophpbb.gitportfolio.provider.gitlab']]
+            - [add_provider, ['@mundophpbb.gitportfolio.provider.custom']]
+
+    mundophpbb.gitportfolio.listener:
+        class: mundophpbb\gitportfolio\core\event\listener
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@template'
+            - '@controller.helper'
+            - '@user'
+            - '@mundophpbb.gitportfolio.provider_manager'
+        tags:
+            - { name: event.listener }
+
+    mundophpbb.gitportfolio.controller.main:
+        class: mundophpbb\gitportfolio\core\controller\main_controller
+        arguments:
+            - '@controller.helper'
+            - '@template'
+            - '@user'
+            - '@auth'
+            - '@config'
+            - '@request'
+            - '@mundophpbb.gitportfolio.provider_manager'
+        tags:
+            - { name: controller.service_arguments }

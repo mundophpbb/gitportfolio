@@ -1,0 +1,493 @@
+<!-- INCLUDE overall_header.html -->
+
+<style>
+.gp-acp-shell { display: grid; gap: 14px; }
+.gp-acp-hero {
+    background: linear-gradient(135deg, #f7fafc 0%, #eef4f8 100%);
+    border: 1px solid #d7e2ea;
+    border-radius: 6px;
+    padding: 16px 18px;
+}
+.gp-acp-hero-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+.gp-acp-hero h1 { margin: 0 0 6px; }
+.gp-acp-hero p { margin: 0; color: #53636f; }
+.gp-acp-hero-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.gp-acp-btn, .gp-acp-hero-links a, .gp-acp-inline-actions a, .gp-acp-inline-actions button {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 6px 10px; border: 1px solid #cfdbe4; background: #fff; border-radius: 4px;
+    text-decoration: none; font-size: .92em; cursor: pointer;
+}
+.gp-acp-btn--primary { background: #eaf3ff; border-color: #bfd2ea; font-weight: 700; }
+.gp-acp-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 14px; }
+.gp-acp-stat { background: #fff; border: 1px solid #d8e2ea; border-radius: 5px; padding: 10px 12px; }
+.gp-acp-stat strong { display:block; font-size:1.25em; line-height:1.1; color:#243540; }
+.gp-acp-stat span { display:block; margin-top:3px; color:#62717c; font-size:.86em; }
+.gp-acp-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 14px; }
+.gp-acp-grid--providers { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.gp-acp-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gp-acp-card { background: #fff; border: 1px solid #d8e2ea; border-radius: 6px; overflow: hidden; }
+.gp-acp-card-head { padding: 11px 14px; background: #f6f9fb; border-bottom: 1px solid #d8e2ea; }
+.gp-acp-card-head h2, .gp-acp-card-head h3 { margin: 0; font-size: 1.04em; }
+.gp-acp-card-head p { margin: 4px 0 0; color: #62717c; font-size: .9em; }
+.gp-acp-card-body { padding: 14px; }
+.gp-acp-list { margin: 0; padding: 0; list-style: none; }
+.gp-acp-list li { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-top: 1px solid #eef3f6; }
+.gp-acp-list li:first-child { border-top: 0; padding-top: 0; }
+.gp-acp-list .gp-label { color: #61707a; }
+.gp-acp-list .gp-value { text-align: right; font-weight: 700; color: #243540; }
+.gp-acp-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.gp-acp-form-grid fieldset { margin: 0; }
+.gp-acp-form-grid fieldset dl:last-child { margin-bottom: 0; }
+.gp-acp-preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+.gp-acp-preview-card { border: 1px solid #d8e2ea; border-radius: 5px; padding: 10px; background: #fff; display:flex; flex-direction:column; gap: 8px; }
+.gp-acp-preview-card h4 { margin: 0 0 6px; font-size: 1em; }
+.gp-acp-preview-card p { margin: 0 0 8px; color: #61707a; min-height: 34px; }
+.gp-acp-preview-meta { display: flex; flex-wrap: wrap; gap: 6px 10px; color: #62717c; font-size: .84em; }
+.gp-acp-inline-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items:center; }
+.gp-acp-help { margin: 0; padding-left: 18px; }
+.gp-acp-help li { margin: 0 0 5px; }
+.gp-acp-section-note { margin: 0 0 12px; color: #61707a; }
+.gp-acp-table-wrap { overflow-x: auto; }
+.gp-acp-custom-table td, .gp-acp-custom-table th { vertical-align: middle; }
+.gp-acp-badge { display: inline-block; padding: 3px 7px; border: 1px solid #d8e2ea; background: #f7fafc; border-radius: 3px; font-size: .84em; }
+.gp-acp-badge--featured { background: #fff8de; border-color: #ead78a; font-weight: 700; }
+.gp-acp-error { margin: 0 0 12px; padding: 10px 12px; background: #fff3f3; border: 1px solid #e5c5c5; color: #8a2e2e; border-radius: 4px; }
+.gp-acp-submits { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.gp-acp-submits .button2, .gp-acp-submits .button1 { margin: 0; }
+.gp-acp-delete-form { display: inline; }
+.gp-acp-card + .gp-acp-card { margin-top: 14px; }
+.gp-acp-navcards { display:grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap:10px; }
+.gp-acp-navcard { display:block; text-decoration:none; color:inherit; border:1px solid #d8e2ea; border-radius:5px; padding:12px; background:#fff; }
+.gp-acp-navcard strong { display:block; color:#243540; margin-bottom:4px; }
+.gp-acp-navcard span { color:#62717c; font-size:.9em; display:block; }
+.gp-acp-toolbar { display:flex; gap:8px; flex-wrap:wrap; }
+.gp-acp-provider-top { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; margin-bottom:12px; }
+.gp-acp-provider-top p { margin: 0; color:#61707a; }
+.gp-acp-stack { display:grid; gap:14px; }
+.gp-acp-mode-kicker { font-size:.82em; text-transform:uppercase; letter-spacing:.06em; color:#62717c; margin-bottom:4px; }
+@media (max-width: 900px) {
+    .gp-acp-grid, .gp-acp-grid--two, .gp-acp-form-grid { grid-template-columns: 1fr; }
+    .gp-acp-hero-head, .gp-acp-provider-top { flex-direction: column; }
+}
+</style>
+
+<div class="gp-acp-shell">
+    <section class="gp-acp-hero">
+        <div class="gp-acp-hero-head">
+            <div>
+                <div class="gp-acp-mode-kicker">{L_ACP_GITPORTFOLIO_TITLE}</div>
+                <h1>{PAGE_TITLE}</h1>
+                <p>{L_ACP_GITPORTFOLIO_SETTINGS_EXPLAIN}</p>
+                <div class="gp-acp-hero-links">
+                    <!-- IF S_GITPORTFOLIO_HAS_PUBLIC_PAGE --><a href="{U_GITPORTFOLIO_PUBLIC_PAGE}" target="_blank" rel="noopener">{L_ACP_GITPORTFOLIO_OPEN_PUBLIC_PAGE}</a><!-- ENDIF -->
+                    <!-- IF GITPORTFOLIO_GITHUB_PROFILE_URL --><a href="{GITPORTFOLIO_GITHUB_PROFILE_URL}" target="_blank" rel="noopener">GitHub</a><!-- ENDIF -->
+                    <!-- IF GITPORTFOLIO_GITLAB_PROFILE_URL --><a href="{GITPORTFOLIO_GITLAB_PROFILE_URL}" target="_blank" rel="noopener">GitLab</a><!-- ENDIF -->
+                </div>
+            </div>
+            <div class="gp-acp-inline-actions">
+                <a class="gp-acp-btn" href="{U_MODE_SETTINGS}">{L_ACP_GITPORTFOLIO_SETTINGS}</a>
+                <a class="gp-acp-btn" href="{U_MODE_GITHUB}">{L_ACP_GITPORTFOLIO_SECTION_GITHUB}</a>
+                <a class="gp-acp-btn" href="{U_MODE_GITLAB}">{L_ACP_GITPORTFOLIO_SECTION_GITLAB}</a>
+                <a class="gp-acp-btn" href="{U_MODE_CUSTOM}">{L_ACP_GITPORTFOLIO_SECTION_CUSTOM}</a>
+                <a class="gp-acp-btn" href="{U_MODE_DISPLAY}">{L_ACP_GITPORTFOLIO_MENU_DISPLAY}</a>
+                <a class="gp-acp-btn" href="{U_MODE_TOOLS}">{L_ACP_GITPORTFOLIO_MENU_TOOLS}</a>
+            </div>
+        </div>
+
+        <div class="gp-acp-stats">
+            <div class="gp-acp-stat"><strong>{GITPORTFOLIO_VISIBLE_TOTAL}</strong><span>{L_ACP_GITPORTFOLIO_VISIBLE_ITEMS}</span></div>
+            <div class="gp-acp-stat"><strong>{GITPORTFOLIO_FEATURED_TOTAL}</strong><span>{L_ACP_GITPORTFOLIO_FEATURED_ITEMS}</span></div>
+            <div class="gp-acp-stat"><strong>{GITPORTFOLIO_GITHUB_COUNT}</strong><span>{L_ACP_GITPORTFOLIO_SECTION_GITHUB}</span></div>
+            <div class="gp-acp-stat"><strong>{GITPORTFOLIO_GITLAB_COUNT}</strong><span>{L_ACP_GITPORTFOLIO_SECTION_GITLAB}</span></div>
+            <div class="gp-acp-stat"><strong>{GITPORTFOLIO_CUSTOM_COUNT}</strong><span>{L_ACP_GITPORTFOLIO_SECTION_CUSTOM}</span></div>
+            <div class="gp-acp-stat"><strong>{GITPORTFOLIO_PINNED_TOTAL}</strong><span>{L_ACP_GITPORTFOLIO_PINNED_ITEMS}</span></div>
+            <div class="gp-acp-stat"><strong>{GITPORTFOLIO_TOTAL_STARS}</strong><span>{L_GITPORTFOLIO_STARS}</span></div>
+            <div class="gp-acp-stat"><strong><!-- IF GITPORTFOLIO_ENABLE_PUBLIC_PAGE -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></strong><span>{L_ACP_GITPORTFOLIO_PUBLIC_PAGE}</span></div>
+        </div>
+    </section>
+
+    <!-- IF S_MODE_SETTINGS -->
+    <div class="gp-acp-stack">
+        <section class="gp-acp-card">
+            <div class="gp-acp-card-head">
+                <h2>{L_ACP_GITPORTFOLIO_STATUS}</h2>
+                <p>{L_ACP_GITPORTFOLIO_STATUS_EXPLAIN}</p>
+            </div>
+            <div class="gp-acp-card-body">
+                <div class="gp-acp-navcards">
+                    <a class="gp-acp-navcard" href="{U_MODE_GITHUB}"><strong>{L_ACP_GITPORTFOLIO_SECTION_GITHUB}</strong><span>{GITPORTFOLIO_GITHUB_COUNT} {L_ACP_GITPORTFOLIO_VISIBLE_ITEMS}</span></a>
+                    <a class="gp-acp-navcard" href="{U_MODE_GITLAB}"><strong>{L_ACP_GITPORTFOLIO_SECTION_GITLAB}</strong><span>{GITPORTFOLIO_GITLAB_COUNT} {L_ACP_GITPORTFOLIO_VISIBLE_ITEMS}</span></a>
+                    <a class="gp-acp-navcard" href="{U_MODE_CUSTOM}"><strong>{L_ACP_GITPORTFOLIO_SECTION_CUSTOM}</strong><span>{GITPORTFOLIO_CUSTOM_COUNT} {L_ACP_GITPORTFOLIO_VISIBLE_ITEMS}</span></a>
+                    <a class="gp-acp-navcard" href="{U_MODE_DISPLAY}"><strong>{L_ACP_GITPORTFOLIO_MENU_DISPLAY}</strong><span>{L_ACP_GITPORTFOLIO_PUBLIC_PAGE} / {L_ACP_GITPORTFOLIO_HOME_BLOCK}</span></a>
+                    <a class="gp-acp-navcard" href="{U_MODE_TOOLS}"><strong>{L_ACP_GITPORTFOLIO_MENU_TOOLS}</strong><span>{L_ACP_GITPORTFOLIO_REFRESH_CACHE} / {L_ACP_GITPORTFOLIO_ACTIVITY_LOG}</span></a>
+                </div>
+            </div>
+        </section>
+
+        <div class="gp-acp-grid">
+            <section class="gp-acp-card">
+                <div class="gp-acp-card-head">
+                    <h2>{L_ACP_GITPORTFOLIO_PROVIDER_STATUS}</h2>
+                    <p>{L_ACP_GITPORTFOLIO_PROVIDER_PREVIEW}</p>
+                </div>
+                <div class="gp-acp-card-body">
+                    <ul class="gp-acp-list">
+                        <li><span class="gp-label">GitHub</span><span class="gp-value"><span class="gp-acp-badge"><!-- IF GITPORTFOLIO_ENABLE_GITHUB -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></span> {GITPORTFOLIO_GITHUB_STATUS}</span></li>
+                        <li><span class="gp-label">GitLab</span><span class="gp-value"><span class="gp-acp-badge"><!-- IF GITPORTFOLIO_ENABLE_GITLAB -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></span> {GITPORTFOLIO_GITLAB_STATUS}</span></li>
+                        <li><span class="gp-label">{L_ACP_GITPORTFOLIO_SECTION_CUSTOM}</span><span class="gp-value"><span class="gp-acp-badge"><!-- IF GITPORTFOLIO_ENABLE_CUSTOM -->{L_YES}<!-- ELSE -->{L_NO}<!-- ENDIF --></span> {GITPORTFOLIO_CUSTOM_COUNT}</span></li>
+                        <li><span class="gp-label">{L_ACP_GITPORTFOLIO_HOME_BLOCK}</span><span class="gp-value"><!-- IF GITPORTFOLIO_HOME_BLOCK_ENABLE -->{L_YES} ({GITPORTFOLIO_HOME_BLOCK_LIMIT})<!-- ELSE -->{L_NO}<!-- ENDIF --></span></li>
+                        <li><span class="gp-label">{L_ACP_GITPORTFOLIO_DEFAULT_VIEW_MODE}</span><span class="gp-value">{GITPORTFOLIO_DEFAULT_VIEW_MODE}</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="gp-acp-card">
+                <div class="gp-acp-card-head">
+                    <h2>{L_ACP_GITPORTFOLIO_STATUS_QUICK_HELP}</h2>
+                    <p>{L_ACP_GITPORTFOLIO_PERMISSIONS_INFO}</p>
+                </div>
+                <div class="gp-acp-card-body">
+                    <ul class="gp-acp-help">
+                        <li>{L_ACP_GITPORTFOLIO_STATUS_HELP_GITHUB}</li>
+                        <li>{L_ACP_GITPORTFOLIO_STATUS_HELP_GITLAB}</li>
+                        <li>{L_ACP_GITPORTFOLIO_STATUS_HELP_CUSTOM}</li>
+                        <li>{L_ACP_GITPORTFOLIO_STATUS_HELP_PUBLIC}</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- ENDIF -->
+
+    <!-- IF S_MODE_GITHUB -->
+    <div class="gp-acp-stack">
+        <form method="post" action="{U_ACTION}">
+            <section class="gp-acp-card">
+                <div class="gp-acp-card-head">
+                    <h2>{L_ACP_GITPORTFOLIO_SECTION_GITHUB}</h2>
+                    <p>{L_ACP_GITPORTFOLIO_GITHUB_PREVIEW_INFO}</p>
+                </div>
+                <div class="gp-acp-card-body">
+                    <div class="gp-acp-form-grid">
+                        <fieldset>
+                            <legend>{L_ACP_GITPORTFOLIO_SECTION_GITHUB}</legend>
+                            <dl><dt><label for="gitportfolio_enable_github">{L_ACP_GITPORTFOLIO_ENABLE_GITHUB}{L_COLON}</label></dt><dd><label><input type="radio" class="radio" id="gitportfolio_enable_github" name="gitportfolio_enable_github" value="1"<!-- IF GITPORTFOLIO_ENABLE_GITHUB --> checked="checked"<!-- ENDIF --> /> {L_YES}</label><label><input type="radio" class="radio" name="gitportfolio_enable_github" value="0"<!-- IF not GITPORTFOLIO_ENABLE_GITHUB --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd></dl>
+                            <dl><dt><label for="gitportfolio_github_username">{L_ACP_GITPORTFOLIO_GITHUB_USERNAME}{L_COLON}</label></dt><dd><input type="text" id="gitportfolio_github_username" name="gitportfolio_github_username" value="{GITPORTFOLIO_GITHUB_USERNAME}" class="text medium" /></dd></dl>
+                            <dl><dt><label for="gitportfolio_github_token">{L_ACP_GITPORTFOLIO_GITHUB_TOKEN}{L_COLON}</label><br><span>{L_ACP_GITPORTFOLIO_GITHUB_TOKEN_EXPLAIN}</span></dt><dd><input type="text" id="gitportfolio_github_token" name="gitportfolio_github_token" value="{GITPORTFOLIO_GITHUB_TOKEN}" class="text medium" autocomplete="off" /></dd></dl>
+                        </fieldset>
+                        <fieldset>
+                            <legend>{L_ACP_GITPORTFOLIO_STATUS}</legend>
+                            <dl><dt><label for="gitportfolio_github_repo_limit">{L_ACP_GITPORTFOLIO_GITHUB_LIMIT}{L_COLON}</label></dt><dd><input type="number" id="gitportfolio_github_repo_limit" name="gitportfolio_github_repo_limit" value="{GITPORTFOLIO_GITHUB_REPO_LIMIT}" min="1" max="100" /></dd></dl>
+                            <dl><dt><label for="gitportfolio_github_cache_ttl">{L_ACP_GITPORTFOLIO_GITHUB_CACHE_TTL}{L_COLON}</label></dt><dd><input type="number" id="gitportfolio_github_cache_ttl" name="gitportfolio_github_cache_ttl" value="{GITPORTFOLIO_GITHUB_CACHE_TTL}" min="60" step="60" /></dd></dl>
+                            <dl><dt>{L_ACP_GITPORTFOLIO_PROVIDER_STATUS}{L_COLON}</dt><dd><span class="gp-acp-badge">{GITPORTFOLIO_GITHUB_STATUS}</span></dd></dl>
+                        </fieldset>
+                    </div>
+                    <div class="gp-acp-submits" style="margin-top: 14px;">
+                        <input class="button1" type="submit" name="save_github_settings" value="{L_SUBMIT}" />
+                        <input class="gp-acp-btn" type="submit" name="refresh_github" value="{L_ACP_GITPORTFOLIO_REFRESH_GITHUB}" />
+                    </div>
+                    {S_FORM_TOKEN}
+                </div>
+            </section>
+        </form>
+
+        <section class="gp-acp-card">
+            <div class="gp-acp-card-head">
+                <h2>{L_ACP_GITPORTFOLIO_SECTION_PREVIEW_GITHUB}</h2>
+                <p><!-- IF S_GITHUB_HAS_ERROR -->{GITPORTFOLIO_GITHUB_ERROR}<!-- ELSE -->{L_ACP_GITPORTFOLIO_PROVIDER_PREVIEW}<!-- ENDIF --></p>
+            </div>
+            <div class="gp-acp-card-body">
+                <!-- IF S_GITHUB_HAS_PREVIEW -->
+                <div class="gp-acp-preview-grid">
+                    <!-- BEGIN github_repo -->
+                    <div class="gp-acp-preview-card">
+                        <div>
+                            <h4><a href="{github_repo.U_URL}" target="_blank" rel="noopener">{github_repo.NAME}</a></h4>
+                            <p><!-- IF github_repo.DESCRIPTION -->{github_repo.DESCRIPTION}<!-- ELSE -->{L_GITPORTFOLIO_NO_DESCRIPTION}<!-- ENDIF --></p>
+                            <div class="gp-acp-preview-meta"><span>{github_repo.LANGUAGE}</span><span>★ {github_repo.STARS}</span><span>⑂ {github_repo.FORKS}</span><span>{github_repo.UPDATED_AT}</span></div>
+                        </div>
+                        <form method="post" action="{U_ACTION}">
+                            <input type="hidden" name="source_provider" value="github" />
+                            <input type="hidden" name="source_identifier" value="{github_repo.IDENTIFIER}" />
+                            <input class="gp-acp-btn" type="submit" name="import_provider_repo" value="{L_ACP_GITPORTFOLIO_IMPORT_TO_CUSTOM}" />
+                            {S_FORM_TOKEN}
+                        </form>
+                    </div>
+                    <!-- END github_repo -->
+                </div>
+                <!-- ELSE -->
+                <p class="gp-acp-section-note"><!-- IF S_GITHUB_HAS_ERROR -->{GITPORTFOLIO_GITHUB_ERROR}<!-- ELSE -->{L_ACP_GITPORTFOLIO_GITHUB_NO_RESULTS}<!-- ENDIF --></p>
+                <!-- ENDIF -->
+            </div>
+        </section>
+    </div>
+    <!-- ENDIF -->
+
+    <!-- IF S_MODE_GITLAB -->
+    <div class="gp-acp-stack">
+        <form method="post" action="{U_ACTION}">
+            <section class="gp-acp-card">
+                <div class="gp-acp-card-head">
+                    <h2>{L_ACP_GITPORTFOLIO_SECTION_GITLAB}</h2>
+                    <p>{L_ACP_GITPORTFOLIO_STATUS_HELP_GITLAB}</p>
+                </div>
+                <div class="gp-acp-card-body">
+                    <div class="gp-acp-form-grid">
+                        <fieldset>
+                            <legend>{L_ACP_GITPORTFOLIO_SECTION_GITLAB}</legend>
+                            <dl><dt><label for="gitportfolio_enable_gitlab">{L_ACP_GITPORTFOLIO_ENABLE_GITLAB}{L_COLON}</label></dt><dd><label><input type="radio" class="radio" id="gitportfolio_enable_gitlab" name="gitportfolio_enable_gitlab" value="1"<!-- IF GITPORTFOLIO_ENABLE_GITLAB --> checked="checked"<!-- ENDIF --> /> {L_YES}</label><label><input type="radio" class="radio" name="gitportfolio_enable_gitlab" value="0"<!-- IF not GITPORTFOLIO_ENABLE_GITLAB --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd></dl>
+                            <dl><dt><label for="gitportfolio_gitlab_base_url">{L_ACP_GITPORTFOLIO_GITLAB_BASE_URL}{L_COLON}</label><br><span>{L_ACP_GITPORTFOLIO_GITLAB_BASE_URL_EXPLAIN}</span></dt><dd><input type="text" id="gitportfolio_gitlab_base_url" name="gitportfolio_gitlab_base_url" value="{GITPORTFOLIO_GITLAB_BASE_URL}" class="text xxlarge" /></dd></dl>
+                            <dl><dt><label for="gitportfolio_gitlab_namespace">{L_ACP_GITPORTFOLIO_GITLAB_NAMESPACE}{L_COLON}</label><br><span>{L_ACP_GITPORTFOLIO_GITLAB_NAMESPACE_EXPLAIN}</span></dt><dd><input type="text" id="gitportfolio_gitlab_namespace" name="gitportfolio_gitlab_namespace" value="{GITPORTFOLIO_GITLAB_NAMESPACE}" class="text medium" /></dd></dl>
+                            <dl><dt><label for="gitportfolio_gitlab_token">{L_ACP_GITPORTFOLIO_GITLAB_TOKEN}{L_COLON}</label><br><span>{L_ACP_GITPORTFOLIO_GITLAB_TOKEN_EXPLAIN}</span></dt><dd><input type="text" id="gitportfolio_gitlab_token" name="gitportfolio_gitlab_token" value="{GITPORTFOLIO_GITLAB_TOKEN}" class="text medium" autocomplete="off" /></dd></dl>
+                        </fieldset>
+                        <fieldset>
+                            <legend>{L_ACP_GITPORTFOLIO_STATUS}</legend>
+                            <dl><dt><label for="gitportfolio_gitlab_namespace_type">{L_ACP_GITPORTFOLIO_GITLAB_NS_TYPE}{L_COLON}</label></dt><dd><select id="gitportfolio_gitlab_namespace_type" name="gitportfolio_gitlab_namespace_type"><option value="user"<!-- IF GITPORTFOLIO_GITLAB_NS_TYPE eq 'user' --> selected="selected"<!-- ENDIF -->>{L_ACP_GITPORTFOLIO_GITLAB_NS_USER}</option><option value="group"<!-- IF GITPORTFOLIO_GITLAB_NS_TYPE eq 'group' --> selected="selected"<!-- ENDIF -->>{L_ACP_GITPORTFOLIO_GITLAB_NS_GROUP}</option></select></dd></dl>
+                            <dl><dt><label for="gitportfolio_gitlab_repo_limit">{L_ACP_GITPORTFOLIO_GITLAB_LIMIT}{L_COLON}</label></dt><dd><input type="number" id="gitportfolio_gitlab_repo_limit" name="gitportfolio_gitlab_repo_limit" value="{GITPORTFOLIO_GITLAB_REPO_LIMIT}" min="1" max="100" /></dd></dl>
+                            <dl><dt><label for="gitportfolio_gitlab_cache_ttl">{L_ACP_GITPORTFOLIO_GITLAB_CACHE_TTL}{L_COLON}</label></dt><dd><input type="number" id="gitportfolio_gitlab_cache_ttl" name="gitportfolio_gitlab_cache_ttl" value="{GITPORTFOLIO_GITLAB_CACHE_TTL}" min="60" step="60" /></dd></dl>
+                            <dl><dt>{L_ACP_GITPORTFOLIO_PROVIDER_STATUS}{L_COLON}</dt><dd><span class="gp-acp-badge">{GITPORTFOLIO_GITLAB_STATUS}</span></dd></dl>
+                        </fieldset>
+                    </div>
+                    <div class="gp-acp-submits" style="margin-top: 14px;">
+                        <input class="button1" type="submit" name="save_gitlab_settings" value="{L_SUBMIT}" />
+                        <input class="gp-acp-btn" type="submit" name="refresh_gitlab" value="{L_ACP_GITPORTFOLIO_REFRESH_GITLAB}" />
+                    </div>
+                    {S_FORM_TOKEN}
+                </div>
+            </section>
+        </form>
+
+        <section class="gp-acp-card">
+            <div class="gp-acp-card-head">
+                <h2>{L_ACP_GITPORTFOLIO_SECTION_PREVIEW_GITLAB}</h2>
+                <p><!-- IF S_GITLAB_HAS_ERROR -->{GITPORTFOLIO_GITLAB_ERROR}<!-- ELSE -->{L_ACP_GITPORTFOLIO_PROVIDER_PREVIEW}<!-- ENDIF --></p>
+            </div>
+            <div class="gp-acp-card-body">
+                <!-- IF S_GITLAB_HAS_PREVIEW -->
+                <div class="gp-acp-preview-grid">
+                    <!-- BEGIN gitlab_repo -->
+                    <div class="gp-acp-preview-card">
+                        <div>
+                            <h4><a href="{gitlab_repo.U_URL}" target="_blank" rel="noopener">{gitlab_repo.NAME}</a></h4>
+                            <p><!-- IF gitlab_repo.DESCRIPTION -->{gitlab_repo.DESCRIPTION}<!-- ELSE -->{L_GITPORTFOLIO_NO_DESCRIPTION}<!-- ENDIF --></p>
+                            <div class="gp-acp-preview-meta"><span>{gitlab_repo.LANGUAGE}</span><span>★ {gitlab_repo.STARS}</span><span>⑂ {gitlab_repo.FORKS}</span><span>{gitlab_repo.VISIBILITY}</span></div>
+                        </div>
+                        <form method="post" action="{U_ACTION}">
+                            <input type="hidden" name="source_provider" value="gitlab" />
+                            <input type="hidden" name="source_identifier" value="{gitlab_repo.IDENTIFIER}" />
+                            <input class="gp-acp-btn" type="submit" name="import_provider_repo" value="{L_ACP_GITPORTFOLIO_IMPORT_TO_CUSTOM}" />
+                            {S_FORM_TOKEN}
+                        </form>
+                    </div>
+                    <!-- END gitlab_repo -->
+                </div>
+                <!-- ELSE -->
+                <p class="gp-acp-section-note"><!-- IF S_GITLAB_HAS_ERROR -->{GITPORTFOLIO_GITLAB_ERROR}<!-- ELSE -->{L_ACP_GITPORTFOLIO_GITLAB_NO_RESULTS}<!-- ENDIF --></p>
+                <!-- ENDIF -->
+            </div>
+        </section>
+    </div>
+    <!-- ENDIF -->
+
+    <!-- IF S_MODE_CUSTOM -->
+    <div class="gp-acp-stack">
+        <form method="post" action="{U_ACTION}">
+            <section class="gp-acp-card">
+                <div class="gp-acp-card-head">
+                    <h2>{L_ACP_GITPORTFOLIO_SECTION_CUSTOM}</h2>
+                    <p>{L_ACP_GITPORTFOLIO_CUSTOM_EXPLAIN}</p>
+                </div>
+                <div class="gp-acp-card-body">
+                    <dl><dt><label for="gitportfolio_enable_custom">{L_ACP_GITPORTFOLIO_ENABLE_CUSTOM}{L_COLON}</label></dt><dd><label><input type="radio" class="radio" id="gitportfolio_enable_custom" name="gitportfolio_enable_custom" value="1"<!-- IF GITPORTFOLIO_ENABLE_CUSTOM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label><label><input type="radio" class="radio" name="gitportfolio_enable_custom" value="0"<!-- IF not GITPORTFOLIO_ENABLE_CUSTOM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd></dl>
+                    <div class="gp-acp-submits" style="margin-top: 14px;">
+                        <input class="button1" type="submit" name="save_custom_settings" value="{L_SUBMIT}" />
+                    </div>
+                    {S_FORM_TOKEN}
+                </div>
+            </section>
+        </form>
+
+        <section class="gp-acp-card">
+            <div class="gp-acp-card-head">
+                <h2>{L_ACP_GITPORTFOLIO_SECTION_CUSTOM_MANAGER}</h2>
+                <p>{L_ACP_GITPORTFOLIO_CUSTOM_EXPLAIN}</p>
+            </div>
+            <div class="gp-acp-card-body">
+                <!-- IF S_CUSTOM_FORM_HAS_ERROR --><div class="gp-acp-error">{CUSTOM_FORM_ERROR}</div><!-- ENDIF -->
+
+                <!-- IF S_CUSTOM_HAS_ITEMS -->
+                <div class="gp-acp-table-wrap">
+                    <table class="table1 gp-acp-custom-table">
+                        <thead>
+                            <tr>
+                                <th>{L_ACP_GITPORTFOLIO_CUSTOM_NAME}</th>
+                                <th>{L_ACP_GITPORTFOLIO_CUSTOM_LANGUAGE}</th>
+                                <th>{L_ACP_GITPORTFOLIO_CUSTOM_ORDER}</th>
+                                <th>{L_ACP_GITPORTFOLIO_CUSTOM_FEATURED}</th>
+                                <th>{L_ACP_GITPORTFOLIO_CUSTOM_PINNED}</th>
+                                <th>{L_ACTION}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- BEGIN custom_repo -->
+                            <tr>
+                                <td>
+                                    <a href="{custom_repo.U_URL}" target="_blank" rel="noopener">{custom_repo.NAME}</a>
+                                    <!-- IF custom_repo.DESCRIPTION --><br><span class="gp-acp-section-note">{custom_repo.DESCRIPTION}</span><!-- ENDIF -->
+                                </td>
+                                <td>{custom_repo.LANGUAGE}</td>
+                                <td>{custom_repo.DISPLAY_ORDER}</td>
+                                <td><!-- IF custom_repo.S_FEATURED --><span class="gp-acp-badge gp-acp-badge--featured">{L_ACP_GITPORTFOLIO_CUSTOM_FEATURED_BADGE}</span><!-- ELSE --><span class="gp-acp-badge">{L_NO}</span><!-- ENDIF --></td>
+                                <td><!-- IF custom_repo.S_PINNED --><span class="gp-acp-badge gp-acp-badge--featured">{L_GITPORTFOLIO_PINNED}</span><!-- ELSE --><span class="gp-acp-badge">{L_NO}</span><!-- ENDIF --></td>
+                                <td>
+                                    <div class="gp-acp-inline-actions">
+                                        <a href="{custom_repo.U_EDIT}">{L_EDIT}</a>
+                                        <form class="gp-acp-delete-form" method="post" action="{U_ACTION}"><input type="hidden" name="custom_id" value="{custom_repo.ID}" /><input class="gp-acp-btn" type="submit" name="move_custom_up" value="↑" />{S_FORM_TOKEN}</form>
+                                        <form class="gp-acp-delete-form" method="post" action="{U_ACTION}"><input type="hidden" name="custom_id" value="{custom_repo.ID}" /><input class="gp-acp-btn" type="submit" name="move_custom_down" value="↓" />{S_FORM_TOKEN}</form>
+                                        <form class="gp-acp-delete-form" method="post" action="{U_ACTION}"><input type="hidden" name="custom_id" value="{custom_repo.ID}" /><input class="gp-acp-btn" type="submit" name="toggle_pin_custom" value="{L_ACP_GITPORTFOLIO_TOGGLE_PIN}" />{S_FORM_TOKEN}</form>
+                                        <form class="gp-acp-delete-form" method="post" action="{U_ACTION}" onsubmit="return confirm('{L_ACP_GITPORTFOLIO_CUSTOM_DELETE_CONFIRM}');">
+                                            <input type="hidden" name="custom_id" value="{custom_repo.ID}" />
+                                            <input class="gp-acp-btn" type="submit" name="delete_custom" value="{L_DELETE}" />
+                                            {S_FORM_TOKEN}
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- END custom_repo -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- ELSE -->
+                <p class="gp-acp-section-note">{L_ACP_GITPORTFOLIO_CUSTOM_NO_RESULTS}</p>
+                <!-- ENDIF -->
+
+                <form id="acp_gitportfolio_custom" method="post" action="{U_ACTION}" enctype="multipart/form-data" style="margin-top: 14px;">
+                    <div class="gp-acp-form-grid">
+                        <fieldset>
+                            <legend><!-- IF S_CUSTOM_EDITING -->{L_ACP_GITPORTFOLIO_CUSTOM_EDIT}<!-- ELSE -->{L_ACP_GITPORTFOLIO_CUSTOM_ADD}<!-- ENDIF --></legend>
+                            <input type="hidden" name="custom_id" value="{CUSTOM_ID}" />
+                            <dl><dt><label for="custom_name">{L_ACP_GITPORTFOLIO_CUSTOM_NAME}{L_COLON}</label></dt><dd><input type="text" id="custom_name" name="custom_name" value="{CUSTOM_NAME}" class="text medium" /></dd></dl>
+                            <dl><dt><label for="custom_full_name">{L_ACP_GITPORTFOLIO_CUSTOM_FULL_NAME}{L_COLON}</label></dt><dd><input type="text" id="custom_full_name" name="custom_full_name" value="{CUSTOM_FULL_NAME}" class="text medium" /></dd></dl>
+                            <dl><dt><label for="custom_description">{L_ACP_GITPORTFOLIO_CUSTOM_DESCRIPTION}{L_COLON}</label></dt><dd><textarea id="custom_description" name="custom_description" rows="4" cols="60">{CUSTOM_DESCRIPTION}</textarea></dd></dl>
+                            <dl><dt><label for="custom_url">{L_ACP_GITPORTFOLIO_CUSTOM_URL}{L_COLON}</label></dt><dd><input type="text" id="custom_url" name="custom_url" value="{CUSTOM_URL}" class="text xxlarge" /></dd></dl>
+                            <dl><dt><label for="custom_homepage">{L_ACP_GITPORTFOLIO_CUSTOM_HOMEPAGE}{L_COLON}</label></dt><dd><input type="text" id="custom_homepage" name="custom_homepage" value="{CUSTOM_HOMEPAGE}" class="text xxlarge" /></dd></dl>
+                            <dl><dt><label for="custom_owner_name">{L_ACP_GITPORTFOLIO_CUSTOM_OWNER}{L_COLON}</label></dt><dd><input type="text" id="custom_owner_name" name="custom_owner_name" value="{CUSTOM_OWNER_NAME}" class="text medium" /></dd></dl>
+                            <dl><dt><label for="custom_owner_avatar">{L_ACP_GITPORTFOLIO_CUSTOM_OWNER_AVATAR}{L_COLON}</label></dt><dd><input type="text" id="custom_owner_avatar" name="custom_owner_avatar" value="{CUSTOM_OWNER_AVATAR}" class="text xxlarge" /></dd></dl>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>{L_ACP_GITPORTFOLIO_SECTION_CUSTOM}</legend>
+                            <dl><dt><label for="custom_language">{L_ACP_GITPORTFOLIO_CUSTOM_LANGUAGE}{L_COLON}</label></dt><dd><input type="text" id="custom_language" name="custom_language" value="{CUSTOM_LANGUAGE}" class="text medium" /></dd></dl>
+                            <dl><dt><label for="custom_stars">{L_ACP_GITPORTFOLIO_CUSTOM_STARS}{L_COLON}</label></dt><dd><input type="number" id="custom_stars" name="custom_stars" value="{CUSTOM_STARS}" min="0" /></dd></dl>
+                            <dl><dt><label for="custom_forks">{L_ACP_GITPORTFOLIO_CUSTOM_FORKS}{L_COLON}</label></dt><dd><input type="number" id="custom_forks" name="custom_forks" value="{CUSTOM_FORKS}" min="0" /></dd></dl>
+                            <dl><dt><label for="custom_open_issues">{L_ACP_GITPORTFOLIO_CUSTOM_ISSUES}{L_COLON}</label></dt><dd><input type="number" id="custom_open_issues" name="custom_open_issues" value="{CUSTOM_OPEN_ISSUES}" min="0" /></dd></dl>
+                            <dl><dt><label for="custom_visibility">{L_ACP_GITPORTFOLIO_CUSTOM_VISIBILITY}{L_COLON}</label></dt><dd><select id="custom_visibility" name="custom_visibility"><option value="public"<!-- IF CUSTOM_VISIBILITY eq 'public' --> selected="selected"<!-- ENDIF -->>{L_ACP_GITPORTFOLIO_CUSTOM_VISIBILITY_PUBLIC}</option><option value="private"<!-- IF CUSTOM_VISIBILITY eq 'private' --> selected="selected"<!-- ENDIF -->>{L_ACP_GITPORTFOLIO_CUSTOM_VISIBILITY_PRIVATE}</option></select></dd></dl>
+                            <dl><dt><label for="custom_default_branch">{L_ACP_GITPORTFOLIO_CUSTOM_BRANCH}{L_COLON}</label></dt><dd><input type="text" id="custom_default_branch" name="custom_default_branch" value="{CUSTOM_DEFAULT_BRANCH}" class="text medium" /></dd></dl>
+                            <dl><dt><label for="custom_image">{L_ACP_GITPORTFOLIO_CUSTOM_IMAGE}{L_COLON}</label></dt><dd><input type="text" id="custom_image" name="custom_image" value="{CUSTOM_IMAGE}" class="text xxlarge" /></dd></dl>
+                            <dl><dt><label for="custom_image_file">{L_ACP_GITPORTFOLIO_CUSTOM_IMAGE_UPLOAD}{L_COLON}</label><br><span>{L_ACP_GITPORTFOLIO_CUSTOM_IMAGE_UPLOAD_EXPLAIN}</span></dt><dd><input type="file" id="custom_image_file" name="custom_image_file" accept=".jpg,.jpeg,.png,.gif,.webp" /></dd></dl>
+                            <dl><dt><label for="custom_display_order">{L_ACP_GITPORTFOLIO_CUSTOM_ORDER}{L_COLON}</label></dt><dd><input type="number" id="custom_display_order" name="custom_display_order" value="{CUSTOM_DISPLAY_ORDER}" /></dd></dl>
+                            <dl><dt><label for="custom_is_featured">{L_ACP_GITPORTFOLIO_CUSTOM_FEATURED}{L_COLON}</label></dt><dd><label><input type="checkbox" id="custom_is_featured" name="custom_is_featured" value="1"<!-- IF CUSTOM_IS_FEATURED --> checked="checked"<!-- ENDIF --> /> {L_YES}</label></dd></dl>
+                            <dl><dt><label for="custom_is_pinned">{L_ACP_GITPORTFOLIO_CUSTOM_PINNED}{L_COLON}</label></dt><dd><label><input type="checkbox" id="custom_is_pinned" name="custom_is_pinned" value="1"<!-- IF CUSTOM_IS_PINNED --> checked="checked"<!-- ENDIF --> /> {L_YES}</label></dd></dl>
+                        </fieldset>
+                    </div>
+
+                    <div class="gp-acp-submits" style="margin-top: 14px;">
+                        <input class="button1" type="submit" name="save_custom" value="<!-- IF S_CUSTOM_EDITING -->{L_ACP_GITPORTFOLIO_CUSTOM_SAVE_CHANGES}<!-- ELSE -->{L_ACP_GITPORTFOLIO_CUSTOM_ADD}<!-- ENDIF -->" />
+                        <!-- IF S_CUSTOM_EDITING --><a class="button2" href="{U_CUSTOM_CANCEL}">{L_ACP_GITPORTFOLIO_CUSTOM_CANCEL}</a><!-- ENDIF -->
+                    </div>
+                    {S_FORM_TOKEN}
+                </form>
+            </div>
+        </section>
+    </div>
+    <!-- ENDIF -->
+
+    <!-- IF S_MODE_DISPLAY -->
+    <form method="post" action="{U_ACTION}">
+        <section class="gp-acp-card">
+            <div class="gp-acp-card-head">
+                <h2>{L_ACP_GITPORTFOLIO_MENU_DISPLAY}</h2>
+                <p>{L_ACP_GITPORTFOLIO_PUBLIC_PAGE_EXPLAIN}</p>
+            </div>
+            <div class="gp-acp-card-body">
+                <div class="gp-acp-form-grid">
+                    <fieldset>
+                        <legend>{L_ACP_GITPORTFOLIO_SECTION_PUBLIC}</legend>
+                        <dl><dt><label for="gitportfolio_enable_public_page">{L_ACP_GITPORTFOLIO_PUBLIC_PAGE}{L_COLON}</label><br><span>{L_ACP_GITPORTFOLIO_PUBLIC_PAGE_EXPLAIN}</span></dt><dd><label><input type="radio" class="radio" id="gitportfolio_enable_public_page" name="gitportfolio_enable_public_page" value="1"<!-- IF GITPORTFOLIO_ENABLE_PUBLIC_PAGE --> checked="checked"<!-- ENDIF --> /> {L_YES}</label><label><input type="radio" class="radio" name="gitportfolio_enable_public_page" value="0"<!-- IF not GITPORTFOLIO_ENABLE_PUBLIC_PAGE --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd></dl>
+                        <dl><dt><label for="gitportfolio_page_title">{L_ACP_GITPORTFOLIO_PAGE_TITLE}{L_COLON}</label></dt><dd><input type="text" id="gitportfolio_page_title" name="gitportfolio_page_title" value="{GITPORTFOLIO_PAGE_TITLE}" class="text medium" /></dd></dl>
+                        <dl><dt><label for="gitportfolio_page_intro">{L_ACP_GITPORTFOLIO_PAGE_INTRO}{L_COLON}</label></dt><dd><textarea id="gitportfolio_page_intro" name="gitportfolio_page_intro" rows="3" cols="60">{GITPORTFOLIO_PAGE_INTRO}</textarea></dd></dl>
+                        <dl><dt><label for="gitportfolio_page_per_page">{L_ACP_GITPORTFOLIO_PER_PAGE}{L_COLON}</label></dt><dd><input type="number" id="gitportfolio_page_per_page" name="gitportfolio_page_per_page" value="{GITPORTFOLIO_PAGE_PER_PAGE}" min="1" max="100" /></dd></dl>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>{L_ACP_GITPORTFOLIO_STATUS}</legend>
+                        <dl><dt><label for="gitportfolio_home_block_enable">{L_ACP_GITPORTFOLIO_HOME_BLOCK}{L_COLON}</label></dt><dd><label><input type="radio" class="radio" id="gitportfolio_home_block_enable" name="gitportfolio_home_block_enable" value="1"<!-- IF GITPORTFOLIO_HOME_BLOCK_ENABLE --> checked="checked"<!-- ENDIF --> /> {L_YES}</label><label><input type="radio" class="radio" name="gitportfolio_home_block_enable" value="0"<!-- IF not GITPORTFOLIO_HOME_BLOCK_ENABLE --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd></dl>
+                        <dl><dt><label for="gitportfolio_home_block_limit">{L_ACP_GITPORTFOLIO_HOME_BLOCK_LIMIT}{L_COLON}</label></dt><dd><input type="number" id="gitportfolio_home_block_limit" name="gitportfolio_home_block_limit" value="{GITPORTFOLIO_HOME_BLOCK_LIMIT}" min="1" max="6" /></dd></dl>
+                        <dl><dt><label for="gitportfolio_default_view_mode">{L_ACP_GITPORTFOLIO_DEFAULT_VIEW_MODE}{L_COLON}</label></dt><dd><select id="gitportfolio_default_view_mode" name="gitportfolio_default_view_mode"><option value="grid"<!-- IF GITPORTFOLIO_DEFAULT_VIEW_MODE eq 'grid' --> selected="selected"<!-- ENDIF -->>{L_GITPORTFOLIO_VIEW_GRID}</option><option value="list"<!-- IF GITPORTFOLIO_DEFAULT_VIEW_MODE eq 'list' --> selected="selected"<!-- ENDIF -->>{L_GITPORTFOLIO_VIEW_LIST}</option></select></dd></dl>
+                        <dl><dt>{L_ACP_GITPORTFOLIO_STATUS_PUBLIC_PAGE}{L_COLON}</dt><dd><!-- IF S_GITPORTFOLIO_HAS_PUBLIC_PAGE --><a href="{U_GITPORTFOLIO_PUBLIC_PAGE}" target="_blank" rel="noopener">{L_ACP_GITPORTFOLIO_OPEN_PUBLIC_PAGE}</a><!-- ELSE -->-<!-- ENDIF --></dd></dl>
+                    </fieldset>
+                </div>
+
+                <div class="gp-acp-submits" style="margin-top: 14px;">
+                    <input class="button1" type="submit" name="save_display_settings" value="{L_SUBMIT}" />
+                </div>
+                {S_FORM_TOKEN}
+            </div>
+        </section>
+    </form>
+    <!-- ENDIF -->
+
+    <!-- IF S_MODE_TOOLS -->
+    <div class="gp-acp-stack">
+        <section class="gp-acp-card">
+            <div class="gp-acp-card-head">
+                <h2>{L_ACP_GITPORTFOLIO_MENU_TOOLS}</h2>
+                <p>{L_ACP_GITPORTFOLIO_REFRESH_CACHE_EXPLAIN}</p>
+            </div>
+            <div class="gp-acp-card-body">
+                <form method="post" action="{U_ACTION}">
+                    <div class="gp-acp-toolbar">
+                        <input class="gp-acp-btn" type="submit" name="refresh_cache" value="{L_ACP_GITPORTFOLIO_REFRESH_CACHE}" />
+                        <input class="gp-acp-btn" type="submit" name="refresh_github" value="{L_ACP_GITPORTFOLIO_REFRESH_GITHUB}" />
+                        <input class="gp-acp-btn" type="submit" name="refresh_gitlab" value="{L_ACP_GITPORTFOLIO_REFRESH_GITLAB}" />
+                    </div>
+                    {S_FORM_TOKEN}
+                </form>
+            </div>
+        </section>
+
+        <section class="gp-acp-card">
+            <div class="gp-acp-card-head">
+                <h2>{L_ACP_GITPORTFOLIO_ACTIVITY_LOG}</h2>
+                <p>{L_ACP_GITPORTFOLIO_ACTIVITY_LOG_EXPLAIN}</p>
+            </div>
+            <div class="gp-acp-card-body">
+                <!-- IF .activity_log -->
+                <div class="gp-acp-table-wrap">
+                    <table class="table1 gp-acp-custom-table">
+                        <thead>
+                            <tr><th>{L_ACP_GITPORTFOLIO_LOG_WHEN}</th><th>{L_ACP_GITPORTFOLIO_LOG_ACTION}</th><th>{L_ACP_GITPORTFOLIO_LOG_PROVIDER}</th><th>{L_ACP_GITPORTFOLIO_LOG_TITLE}</th><th>{L_ACP_GITPORTFOLIO_LOG_USER}</th></tr>
+                        </thead>
+                        <tbody>
+                        <!-- BEGIN activity_log -->
+                            <tr>
+                                <td>{activity_log.LOG_TIME}</td>
+                                <td>{activity_log.ACTION}</td>
+                                <td>{activity_log.PROVIDER}</td>
+                                <td><strong>{activity_log.TITLE}</strong><!-- IF activity_log.DETAILS --><br><span class="gp-acp-section-note">{activity_log.DETAILS}</span><!-- ENDIF --></td>
+                                <td>{activity_log.USERNAME}</td>
+                            </tr>
+                        <!-- END activity_log -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- ELSE -->
+                <p class="gp-acp-section-note">{L_ACP_GITPORTFOLIO_LOG_EMPTY}</p>
+                <!-- ENDIF -->
+            </div>
+        </section>
+    </div>
+    <!-- ENDIF -->
+</div>
+
+<!-- INCLUDE overall_footer.html -->

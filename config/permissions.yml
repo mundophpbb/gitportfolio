@@ -1,0 +1,6 @@
+a_gitportfolio:
+    lang: ACL_A_GITPORTFOLIO
+    cat: misc
+u_gitportfolio_view:
+    lang: ACL_U_GITPORTFOLIO_VIEW
+    cat: misc
