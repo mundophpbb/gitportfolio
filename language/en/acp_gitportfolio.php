@@ -156,4 +156,19 @@ $lang = array_merge($lang, [
     'ACP_GITPORTFOLIO_LOG_EMPTY' => 'No activity has been logged yet.',
     'ACP_GITPORTFOLIO_CUSTOM_IMAGE_UPLOAD' => 'Image upload',
     'ACP_GITPORTFOLIO_CUSTOM_IMAGE_UPLOAD_EXPLAIN' => 'Upload JPG, PNG, GIF or WEBP to save the image locally under images/gitportfolio.',
+
+    'ACP_GITPORTFOLIO_PROVIDER_CURATION' => 'Curation and visibility',
+    'ACP_GITPORTFOLIO_SELECTED_REPOS' => 'Selected repositories',
+    'ACP_GITPORTFOLIO_SELECTED_REPOS_EXPLAIN' => 'Optional whitelist. One repository per line. Supports repo name or full identifier.',
+    'ACP_GITPORTFOLIO_HIDDEN_REPOS' => 'Hidden repositories',
+    'ACP_GITPORTFOLIO_HIDDEN_REPOS_EXPLAIN' => 'Repositories listed here stay synced but do not appear publicly.',
+    'ACP_GITPORTFOLIO_FEATURED_REPOS' => 'Featured repositories',
+    'ACP_GITPORTFOLIO_FEATURED_REPOS_EXPLAIN' => 'Repositories listed here are marked as featured in the public showcase.',
+    'ACP_GITPORTFOLIO_MANUAL_ORDER' => 'Manual order',
+    'ACP_GITPORTFOLIO_MANUAL_ORDER_EXPLAIN' => 'One repository per line. Listed items are prioritised in this exact order.',
+    'ACP_GITPORTFOLIO_REPO_DISCUSSIONS' => 'Repository forum links',
+    'ACP_GITPORTFOLIO_REPO_DISCUSSIONS_EXPLAIN' => 'One per line using repository = target. Target can be a full URL, a relative phpBB path, or just a topic ID.',
+    'ACP_GITPORTFOLIO_CUSTOM_DISCUSSION_URL' => 'Forum/discussion link',
+    'ACP_GITPORTFOLIO_CUSTOM_DISCUSSION_URL_EXPLAIN' => 'Optional link shown as a forum/discussion button for this custom project.',
+
 ]);

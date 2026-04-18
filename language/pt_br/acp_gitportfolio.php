@@ -156,4 +156,19 @@ $lang = array_merge($lang, [
     'ACP_GITPORTFOLIO_LOG_EMPTY' => 'Nenhuma atividade registrada até o momento.',
     'ACP_GITPORTFOLIO_CUSTOM_IMAGE_UPLOAD' => 'Upload de imagem',
     'ACP_GITPORTFOLIO_CUSTOM_IMAGE_UPLOAD_EXPLAIN' => 'Envie JPG, PNG, GIF ou WEBP para salvar a imagem localmente em images/gitportfolio.',
+
+    'ACP_GITPORTFOLIO_PROVIDER_CURATION' => 'Curadoria e visibilidade',
+    'ACP_GITPORTFOLIO_SELECTED_REPOS' => 'Repositórios selecionados',
+    'ACP_GITPORTFOLIO_SELECTED_REPOS_EXPLAIN' => 'Lista opcional de exibição. Um repositório por linha. Aceita nome ou identificador completo.',
+    'ACP_GITPORTFOLIO_HIDDEN_REPOS' => 'Repositórios ocultos',
+    'ACP_GITPORTFOLIO_HIDDEN_REPOS_EXPLAIN' => 'Os repositórios listados aqui continuam sincronizados, mas não aparecem publicamente.',
+    'ACP_GITPORTFOLIO_FEATURED_REPOS' => 'Repositórios em destaque',
+    'ACP_GITPORTFOLIO_FEATURED_REPOS_EXPLAIN' => 'Os repositórios listados aqui são marcados como destaque na vitrine pública.',
+    'ACP_GITPORTFOLIO_MANUAL_ORDER' => 'Ordem manual',
+    'ACP_GITPORTFOLIO_MANUAL_ORDER_EXPLAIN' => 'Um repositório por linha. Os itens listados ganham prioridade nesta ordem exata.',
+    'ACP_GITPORTFOLIO_REPO_DISCUSSIONS' => 'Links de fórum por repositório',
+    'ACP_GITPORTFOLIO_REPO_DISCUSSIONS_EXPLAIN' => 'Uma linha por item no formato repositório = destino. O destino pode ser URL completa, caminho relativo do phpBB ou apenas o ID do tópico.',
+    'ACP_GITPORTFOLIO_CUSTOM_DISCUSSION_URL' => 'Link de fórum/discussão',
+    'ACP_GITPORTFOLIO_CUSTOM_DISCUSSION_URL_EXPLAIN' => 'Link opcional exibido como botão de fórum/discussão para este projeto customizado.',
+
 ]);

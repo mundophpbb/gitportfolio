@@ -105,4 +105,8 @@ $lang = array_merge($lang, [
     'GITPORTFOLIO_REPOSITORY_OVERVIEW'          => 'Repository details',
     'GITPORTFOLIO_REPOSITORY_OVERVIEW_EXPLAIN'  => 'Visual and technical summary of the selected project.',
 
+
+    'GITPORTFOLIO_DISCUSSION_BADGE' => 'Forum',
+    'GITPORTFOLIO_OPEN_DISCUSSION' => 'Open discussion',
+
 ]);

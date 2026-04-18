@@ -115,6 +115,11 @@ class main_module
             $config->set('gitportfolio_github_token', $request->variable('gitportfolio_github_token', '', true));
             $config->set('gitportfolio_github_repo_limit', max(1, min(100, $request->variable('gitportfolio_github_repo_limit', 12))));
             $config->set('gitportfolio_github_cache_ttl', max(60, $request->variable('gitportfolio_github_cache_ttl', 900)));
+            $config->set('gitportfolio_github_manual_order', trim($request->variable('gitportfolio_github_manual_order', '', true)));
+            $config->set('gitportfolio_github_selected_repos', trim($request->variable('gitportfolio_github_selected_repos', '', true)));
+            $config->set('gitportfolio_github_hidden_repos', trim($request->variable('gitportfolio_github_hidden_repos', '', true)));
+            $config->set('gitportfolio_github_featured_repos', trim($request->variable('gitportfolio_github_featured_repos', '', true)));
+            $config->set('gitportfolio_github_repo_discussions', trim($request->variable('gitportfolio_github_repo_discussions', '', true)));
 
             if ($activity_logger)
             {
@@ -133,6 +138,11 @@ class main_module
             $config->set('gitportfolio_gitlab_namespace_type', $request->variable('gitportfolio_gitlab_namespace_type', 'user', true));
             $config->set('gitportfolio_gitlab_repo_limit', max(1, min(100, $request->variable('gitportfolio_gitlab_repo_limit', 12))));
             $config->set('gitportfolio_gitlab_cache_ttl', max(60, $request->variable('gitportfolio_gitlab_cache_ttl', 900)));
+            $config->set('gitportfolio_gitlab_manual_order', trim($request->variable('gitportfolio_gitlab_manual_order', '', true)));
+            $config->set('gitportfolio_gitlab_selected_repos', trim($request->variable('gitportfolio_gitlab_selected_repos', '', true)));
+            $config->set('gitportfolio_gitlab_hidden_repos', trim($request->variable('gitportfolio_gitlab_hidden_repos', '', true)));
+            $config->set('gitportfolio_gitlab_featured_repos', trim($request->variable('gitportfolio_gitlab_featured_repos', '', true)));
+            $config->set('gitportfolio_gitlab_repo_discussions', trim($request->variable('gitportfolio_gitlab_repo_discussions', '', true)));
 
             if ($activity_logger)
             {
@@ -203,6 +213,7 @@ class main_module
                     'visibility'     => $request->variable('custom_visibility', 'public', true),
                     'default_branch' => trim($request->variable('custom_default_branch', 'main', true)),
                     'image'          => $image,
+                    'discussion_url' => trim($request->variable('custom_discussion_url', '', true)),
                     'is_featured'    => $request->variable('custom_is_featured', 0),
                     'is_pinned'      => $request->variable('custom_is_pinned', 0),
                     'display_order'  => $request->variable('custom_display_order', 0),
@@ -226,6 +237,7 @@ class main_module
                     'default_branch' => trim($request->variable('custom_default_branch', 'main', true)),
                     'updated_at'     => time(),
                     'image'          => $image,
+                    'discussion_url' => trim($request->variable('custom_discussion_url', '', true)),
                     'is_featured'    => $request->variable('custom_is_featured', 0),
                     'is_pinned'      => $request->variable('custom_is_pinned', 0),
                     'display_order'  => $request->variable('custom_display_order', 0),
@@ -335,6 +347,8 @@ class main_module
                 'VISIBILITY'   => $repository['visibility'],
                 'S_FEATURED'   => !empty($repository['is_featured']),
                 'S_PINNED'     => !empty($repository['is_pinned']),
+                'DISCUSSION_URL'=> $repository['discussion_url'] ?? '',
+                'S_HAS_DISCUSSION' => !empty($repository['discussion_url']),
                 'U_URL'        => $repository['url'],
                 'U_EDIT'       => $this->build_mode_url('custom') . '&action=edit&custom_id=' . (int) $repository['id'],
             ]);
@@ -388,6 +402,11 @@ class main_module
             'GITPORTFOLIO_GITHUB_TOKEN'       => $config['gitportfolio_github_token'] ?? '',
             'GITPORTFOLIO_GITHUB_REPO_LIMIT'  => (int) ($config['gitportfolio_github_repo_limit'] ?? 12),
             'GITPORTFOLIO_GITHUB_CACHE_TTL'   => (int) ($config['gitportfolio_github_cache_ttl'] ?? 900),
+            'GITPORTFOLIO_GITHUB_MANUAL_ORDER' => $config['gitportfolio_github_manual_order'] ?? '',
+            'GITPORTFOLIO_GITHUB_SELECTED_REPOS' => $config['gitportfolio_github_selected_repos'] ?? '',
+            'GITPORTFOLIO_GITHUB_HIDDEN_REPOS' => $config['gitportfolio_github_hidden_repos'] ?? '',
+            'GITPORTFOLIO_GITHUB_FEATURED_REPOS' => $config['gitportfolio_github_featured_repos'] ?? '',
+            'GITPORTFOLIO_GITHUB_REPO_DISCUSSIONS' => $config['gitportfolio_github_repo_discussions'] ?? '',
             'GITPORTFOLIO_ENABLE_GITLAB'      => !empty($config['gitportfolio_enable_gitlab']),
             'GITPORTFOLIO_GITLAB_BASE_URL'    => $config['gitportfolio_gitlab_base_url'] ?? '',
             'GITPORTFOLIO_GITLAB_NAMESPACE'   => $config['gitportfolio_gitlab_namespace'] ?? '',
@@ -395,6 +414,11 @@ class main_module
             'GITPORTFOLIO_GITLAB_NS_TYPE'     => $config['gitportfolio_gitlab_namespace_type'] ?? 'user',
             'GITPORTFOLIO_GITLAB_REPO_LIMIT'  => (int) ($config['gitportfolio_gitlab_repo_limit'] ?? 12),
             'GITPORTFOLIO_GITLAB_CACHE_TTL'   => (int) ($config['gitportfolio_gitlab_cache_ttl'] ?? 900),
+            'GITPORTFOLIO_GITLAB_MANUAL_ORDER' => $config['gitportfolio_gitlab_manual_order'] ?? '',
+            'GITPORTFOLIO_GITLAB_SELECTED_REPOS' => $config['gitportfolio_gitlab_selected_repos'] ?? '',
+            'GITPORTFOLIO_GITLAB_HIDDEN_REPOS' => $config['gitportfolio_gitlab_hidden_repos'] ?? '',
+            'GITPORTFOLIO_GITLAB_FEATURED_REPOS' => $config['gitportfolio_gitlab_featured_repos'] ?? '',
+            'GITPORTFOLIO_GITLAB_REPO_DISCUSSIONS' => $config['gitportfolio_gitlab_repo_discussions'] ?? '',
             'GITPORTFOLIO_ENABLE_CUSTOM'      => !empty($config['gitportfolio_enable_custom']),
             'GITPORTFOLIO_ENABLE_PUBLIC_PAGE' => !empty($config['gitportfolio_enable_public_page']),
             'GITPORTFOLIO_PAGE_TITLE'         => $config['gitportfolio_page_title'] ?? '',
@@ -422,6 +446,7 @@ class main_module
             'CUSTOM_VISIBILITY'               => $editing_custom['visibility'] ?? 'public',
             'CUSTOM_DEFAULT_BRANCH'           => $editing_custom['default_branch'] ?? 'main',
             'CUSTOM_IMAGE'                    => $editing_custom['image'] ?? '',
+            'CUSTOM_DISCUSSION_URL'           => $editing_custom['discussion_url'] ?? '',
             'CUSTOM_DISPLAY_ORDER'            => (int) ($editing_custom['display_order'] ?? 0),
             'CUSTOM_IS_FEATURED'              => !empty($editing_custom['is_featured']),
             'CUSTOM_IS_PINNED'                => !empty($editing_custom['is_pinned']),
@@ -511,46 +536,54 @@ class main_module
     }
 
     protected function handle_custom_image_upload(string $phpbb_root_path): string
+{
+    global $request;
+
+    $file = $request->file('custom_image_file');
+
+    if (empty($file) || !is_array($file))
     {
-        if (empty($_FILES['custom_image_file']) || !is_array($_FILES['custom_image_file']))
-        {
-            return '';
-        }
-
-        $file = $_FILES['custom_image_file'];
-        if ((int) ($file['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_NO_FILE)
-        {
-            return '';
-        }
-        if ((int) ($file['error'] ?? 0) !== UPLOAD_ERR_OK || empty($file['tmp_name']) || !is_uploaded_file($file['tmp_name']))
-        {
-            return '';
-        }
-
-        $original = (string) ($file['name'] ?? 'image');
-        $ext = strtolower(pathinfo($original, PATHINFO_EXTENSION));
-        if (!in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp'], true))
-        {
-            return '';
-        }
-
-        $directory = rtrim($phpbb_root_path, '/\\') . '/images/gitportfolio';
-        if (!is_dir($directory))
-        {
-            @mkdir($directory, 0775, true);
-        }
-        if (!is_dir($directory) || !is_writable($directory))
-        {
-            return '';
-        }
-
-        $target_name = 'repo_' . time() . '_' . mt_rand(1000, 9999) . '.' . $ext;
-        $target_path = $directory . '/' . $target_name;
-        if (!@move_uploaded_file($file['tmp_name'], $target_path))
-        {
-            return '';
-        }
-
-        return 'images/gitportfolio/' . $target_name;
+        return '';
     }
+
+    if ((int) ($file['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_NO_FILE)
+    {
+        return '';
+    }
+
+    if ((int) ($file['error'] ?? 0) !== UPLOAD_ERR_OK || empty($file['tmp_name']))
+    {
+        return '';
+    }
+
+    $original = (string) ($file['name'] ?? 'image');
+    $ext = strtolower(pathinfo($original, PATHINFO_EXTENSION));
+
+    if (!in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp'], true))
+    {
+        return '';
+    }
+
+    $directory = rtrim($phpbb_root_path, '/\\') . '/images/gitportfolio';
+
+    if (!is_dir($directory))
+    {
+        @mkdir($directory, 0775, true);
+    }
+
+    if (!is_dir($directory) || !is_writable($directory))
+    {
+        return '';
+    }
+
+    $target_name = 'repo_' . time() . '_' . mt_rand(1000, 9999) . '.' . $ext;
+    $target_path = $directory . '/' . $target_name;
+
+    if (!@move_uploaded_file($file['tmp_name'], $target_path))
+    {
+        return '';
+    }
+
+    return 'images/gitportfolio/' . $target_name;
+}
 }

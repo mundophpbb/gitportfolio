@@ -100,6 +100,24 @@ class listener implements EventSubscriberInterface
                 return $pinned;
             }
 
+            $manual_a = (int) ($a['manual_position'] ?? 0);
+            $manual_b = (int) ($b['manual_position'] ?? 0);
+            if ($manual_a > 0 || $manual_b > 0)
+            {
+                if ($manual_a <= 0)
+                {
+                    return 1;
+                }
+                if ($manual_b <= 0)
+                {
+                    return -1;
+                }
+                if ($manual_a !== $manual_b)
+                {
+                    return $manual_a <=> $manual_b;
+                }
+            }
+
             $featured = (!empty($b['is_featured']) ? 1 : 0) <=> (!empty($a['is_featured']) ? 1 : 0);
             if ($featured !== 0)
             {
@@ -121,6 +139,12 @@ class listener implements EventSubscriberInterface
                 'PROVIDER_NAME' => strtoupper((string) ($repo['provider'] ?? 'git')),
                 'UPDATED_AT' => !empty($repo['updated_at']) ? $this->user->format_date((int) $repo['updated_at']) : $this->user->lang('GITPORTFOLIO_UNKNOWN_DATE'),
                 'URL' => (string) ($repo['url'] ?? ''),
+                'U_DETAIL' => $this->helper->route('mundophpbb_gitportfolio_repository_controller', [
+                    'provider' => (string) ($repo['provider'] ?? ''),
+                    'identifier' => rtrim(strtr(base64_encode((string) ($repo['identifier'] ?? '')), '+/', '-_'), '='),
+                ]),
+                'DISCUSSION_URL' => (string) ($repo['discussion_url'] ?? ''),
+                'S_HAS_DISCUSSION' => !empty($repo['discussion_url']),
             ]);
         }
 

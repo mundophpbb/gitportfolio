@@ -41,7 +41,7 @@ class custom_provider implements provider_interface
             return [];
         }
 
-        return $this->custom_repository_manager->get_all();
+        return $this->custom_repository_manager->get_public_items();
     }
 
     public function fetch_repository(string $identifier, bool $force_refresh = false): ?array
@@ -58,7 +58,13 @@ class custom_provider implements provider_interface
             $identifier = substr($identifier, 7);
         }
 
-        return $this->custom_repository_manager->get_by_id((int) $identifier);
+        $repository = $this->custom_repository_manager->get_by_id((int) $identifier);
+        if (!$repository || ($repository['visibility'] ?? 'public') !== 'public')
+        {
+            return null;
+        }
+
+        return $repository;
     }
 
     public function get_last_error(): string

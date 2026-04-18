@@ -21,11 +21,13 @@ class repository_item
         'default_branch' => 'main',
         'updated_at'     => 0,
         'readme'         => '',
+        'image'          => '',
         'license_name'   => '',
         'topics'         => [],
-        'image'          => '',
+        'discussion_url' => '',
         'is_featured'    => false,
-        'display_order'  => 0,
+        'is_pinned'      => false,
+        'manual_position'=> 0,
     ];
 
     public function __construct(array $data = [])
@@ -46,7 +48,6 @@ class repository_item
     public function set(string $key, $value): self
     {
         $this->data[$key] = $value;
-
         return $this;
     }
 }

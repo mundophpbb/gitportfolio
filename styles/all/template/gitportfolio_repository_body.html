@@ -28,6 +28,7 @@
                     <div class="githubportfolio-actions githubportfolio-actions--header githubportfolio-actions--stacked">
                         <a class="button button-secondary button-sm" href="{U_GITPORTFOLIO_PAGE}">{L_GITPORTFOLIO_BACK_TO_LIST}</a>
                         <!-- IF S_GITPORTFOLIO_CAN_REFRESH_REPOSITORY --><a class="button button-secondary button-sm" href="{U_GITPORTFOLIO_REFRESH_REPOSITORY}">{L_GITPORTFOLIO_REFRESH_REPOSITORY}</a><!-- ENDIF -->
+                        <!-- IF S_HAS_DISCUSSION --><a class="button button-secondary button-sm" href="{DISCUSSION_URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_DISCUSSION}</a><!-- ENDIF -->
                         <a class="button button-secondary button-sm" href="{U_URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_REPOSITORY}</a>
                         <!-- IF S_HAS_HOMEPAGE --><a class="button button-secondary button-sm" href="{U_HOMEPAGE}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_PROJECT}</a><!-- ENDIF -->
                     </div>
@@ -71,6 +72,7 @@
                             <div class="githubportfolio-detail-meta">
                                 <!-- IF S_HAS_LANGUAGE --><span class="githubportfolio-badge githubportfolio-badge--language githubportfolio-badge--lang-{LANGUAGE_CLASS}">{LANGUAGE}</span><!-- ENDIF -->
                                 <!-- IF S_HAS_OWNER --><span class="githubportfolio-badge githubportfolio-badge--muted">{OWNER_NAME}</span><!-- ENDIF -->
+                                <!-- IF S_HAS_DISCUSSION --><span class="githubportfolio-badge githubportfolio-badge--discussion">{L_GITPORTFOLIO_DISCUSSION_BADGE}</span><!-- ENDIF -->
                                 <!-- IF S_HAS_LICENSE --><span class="githubportfolio-badge githubportfolio-badge--muted">{LICENSE_NAME}</span><!-- ENDIF -->
                                 <!-- BEGIN repo_topic --><span class="githubportfolio-badge githubportfolio-badge--muted">{repo_topic.TOPIC}</span><!-- END repo_topic -->
                             </div>
@@ -196,6 +198,7 @@
 
                         <div class="githubportfolio-actions">
                             <a class="button button-secondary button-sm" href="{related_repo.U_DETAIL}">{L_GITPORTFOLIO_VIEW_DETAILS}</a>
+                            <!-- IF related_repo.S_HAS_DISCUSSION --><a class="button button-secondary button-sm" href="{related_repo.DISCUSSION_URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_DISCUSSION}</a><!-- ENDIF -->
                             <a class="button button-secondary button-sm" href="{related_repo.URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_REPOSITORY}</a>
                         </div>
                     </div>

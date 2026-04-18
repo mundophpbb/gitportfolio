@@ -2257,3 +2257,6 @@
 .githubportfolio-page--detail .githubportfolio-section-heading__eyebrow {
     margin-bottom: 4px;
 }
+
+.githubportfolio-homeblock__actions { display:inline-block; margin-left: 12px; font-size: .92em; }
+.githubportfolio-homeblock__actions a { text-decoration: none; }

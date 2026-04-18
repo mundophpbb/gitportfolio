@@ -87,6 +87,7 @@ class custom_repository_manager
             'image'          => (string) ($data['image'] ?? ''),
             'is_featured'    => !empty($data['is_featured']) ? 1 : 0,
             'is_pinned'      => !empty($data['is_pinned']) ? 1 : 0,
+            'discussion_url' => (string) ($data['discussion_url'] ?? ''),
             'display_order'  => (int) ($data['display_order'] ?? 0),
         ];
 
@@ -124,6 +125,7 @@ class custom_repository_manager
             'image'          => (string) ($repository['image'] ?? ''),
             'is_featured'    => !empty($repository['is_featured']) ? 1 : 0,
             'is_pinned'      => !empty($repository['is_pinned']) ? 1 : 0,
+            'discussion_url' => (string) ($repository['discussion_url'] ?? ''),
             'display_order'  => 0,
         ];
 
@@ -222,6 +224,7 @@ class custom_repository_manager
             'updated_at'     => (int) ($row['updated_at'] ?? 0),
             'readme'         => '',
             'image'          => (string) ($row['image'] ?? ''),
+            'discussion_url' => (string) ($row['discussion_url'] ?? ''),
             'is_featured'    => !empty($row['is_featured']),
             'is_pinned'      => !empty($row['is_pinned']),
             'display_order'  => (int) ($row['display_order'] ?? 0),

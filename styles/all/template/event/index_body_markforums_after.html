@@ -18,7 +18,7 @@
                         <!-- IF gitportfolio_home_repo.LANGUAGE --><span class="githubportfolio-badge githubportfolio-badge--language">{gitportfolio_home_repo.LANGUAGE}</span><!-- ENDIF -->
                     </div>
 
-                    <h3 class="githubportfolio-title githubportfolio-homeblock__title"><a href="{gitportfolio_home_repo.URL}" target="_blank" rel="noopener">{gitportfolio_home_repo.NAME}</a></h3>
+                    <h3 class="githubportfolio-title githubportfolio-homeblock__title"><a href="{gitportfolio_home_repo.U_DETAIL}">{gitportfolio_home_repo.NAME}</a></h3>
 
                     <!-- IF gitportfolio_home_repo.DESCRIPTION -->
                     <p class="githubportfolio-description githubportfolio-homeblock__description">{gitportfolio_home_repo.DESCRIPTION}</p>
@@ -29,6 +29,7 @@
 
                 <div class="githubportfolio-homeblock__cardfooter">
                     <span class="githubportfolio-stat"><strong>{L_GITPORTFOLIO_UPDATED}:</strong> {gitportfolio_home_repo.UPDATED_AT}</span>
+                    <span class="githubportfolio-homeblock__actions"><a href="{gitportfolio_home_repo.URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_REPOSITORY}</a><!-- IF gitportfolio_home_repo.S_HAS_DISCUSSION --> · <a href="{gitportfolio_home_repo.DISCUSSION_URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_DISCUSSION}</a><!-- ENDIF --></span>
                 </div>
             </article>
             <!-- END gitportfolio_home_repo -->

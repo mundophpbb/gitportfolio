@@ -321,6 +321,7 @@ class main_controller
         $license_name = trim((string) ($repository['license_name'] ?? ''));
         $readme = $detail_mode ? trim((string) ($repository['readme'] ?? '')) : '';
         $topics = $this->normalize_topics($repository['topics'] ?? []);
+        $discussion_url = trim((string) ($repository['discussion_url'] ?? ''));
 
         return [
             'PROVIDER' => $provider_name,
@@ -349,6 +350,7 @@ class main_controller
             'README_LINES' => $readme !== '' ? substr_count($readme, "\n") + 1 : 0,
             'TOPICS_TEXT' => !empty($topics) ? implode(', ', $topics) : '',
             'LANGUAGE_CLASS' => $this->build_language_class($language),
+            'DISCUSSION_URL' => $discussion_url,
             'S_HAS_DESCRIPTION' => ($description !== ''),
             'S_HAS_LANGUAGE' => ($language !== ''),
             'S_HAS_HOMEPAGE' => ($homepage !== ''),
@@ -361,6 +363,7 @@ class main_controller
             'S_HAS_LICENSE' => ($license_name !== ''),
             'S_HAS_README' => ($readme !== ''),
             'S_HAS_TOPICS' => !empty($topics),
+            'S_HAS_DISCUSSION' => ($discussion_url !== ''),
         ];
     }
 
@@ -528,6 +531,25 @@ class main_controller
             {
                 return $pinned_sort;
             }
+
+            $manual_a = (int) ($a['manual_position'] ?? 0);
+            $manual_b = (int) ($b['manual_position'] ?? 0);
+            if ($manual_a > 0 || $manual_b > 0)
+            {
+                if ($manual_a <= 0)
+                {
+                    return 1;
+                }
+                if ($manual_b <= 0)
+                {
+                    return -1;
+                }
+                if ($manual_a !== $manual_b)
+                {
+                    return $manual_a <=> $manual_b;
+                }
+            }
+
             if ($selected_sort === 'stars')
             {
                 $sort = (int) ($b['stars'] ?? 0) <=> (int) ($a['stars'] ?? 0);
@@ -552,11 +574,13 @@ class main_controller
                     return $sort;
                 }
             }
+
             $featured_sort = (!empty($b['is_featured']) ? 1 : 0) <=> (!empty($a['is_featured']) ? 1 : 0);
             if ($featured_sort !== 0)
             {
                 return $featured_sort;
             }
+
             return strcasecmp((string) ($a['name'] ?? ''), (string) ($b['name'] ?? ''));
         });
         return $repositories;

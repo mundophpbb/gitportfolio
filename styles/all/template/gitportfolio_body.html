@@ -160,6 +160,7 @@
 
                             <div class="githubportfolio-actions">
                                 <a class="button button-secondary button-sm" href="{featured_repo.U_DETAIL}">{L_GITPORTFOLIO_VIEW_DETAILS}</a>
+                                <!-- IF featured_repo.S_HAS_DISCUSSION --><a class="button button-secondary button-sm" href="{featured_repo.DISCUSSION_URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_DISCUSSION}</a><!-- ENDIF -->
                                 <a class="button button-secondary button-sm" href="{featured_repo.URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_REPOSITORY}</a>
                             </div>
                         </div>
@@ -191,6 +192,7 @@
                                     <!-- IF repo.IS_PINNED --><span class="githubportfolio-badge githubportfolio-badge--accent">{L_GITPORTFOLIO_PINNED}</span><!-- ENDIF -->
                                     <!-- IF repo.LANGUAGE --><span class="githubportfolio-badge githubportfolio-badge--language githubportfolio-badge--lang-{repo.LANGUAGE_CLASS}">{repo.LANGUAGE}</span><!-- ENDIF -->
                                     <!-- IF repo.S_HAS_OWNER --><span class="githubportfolio-badge githubportfolio-badge--muted">{repo.OWNER_NAME}</span><!-- ENDIF -->
+                                    <!-- IF repo.S_HAS_DISCUSSION --><span class="githubportfolio-badge githubportfolio-badge--discussion">{L_GITPORTFOLIO_DISCUSSION_BADGE}</span><!-- ENDIF -->
                                 </div>
                             </div>
 
@@ -213,6 +215,7 @@
 
                             <div class="githubportfolio-actions">
                                 <a class="button button-secondary button-sm" href="{repo.U_DETAIL}">{L_GITPORTFOLIO_VIEW_DETAILS}</a>
+                                <!-- IF repo.S_HAS_DISCUSSION --><a class="button button-secondary button-sm" href="{repo.DISCUSSION_URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_DISCUSSION}</a><!-- ENDIF -->
                                 <a class="button button-secondary button-sm" href="{repo.URL}" target="_blank" rel="noopener">{L_GITPORTFOLIO_OPEN_REPOSITORY}</a>
                             </div>
                         </div>
